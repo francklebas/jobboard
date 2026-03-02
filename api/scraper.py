@@ -20,14 +20,22 @@ def _matches_stack(title: str, description: str) -> bool:
     return any(kw in text for kw in STACK_KEYWORDS)
 
 
-def run_scrape() -> int:
-    """Scrape jobs from multiple sources, filter by stack, store in Redis."""
+def run_scrape(search_query: str = None) -> int:
+    """Scrape jobs from multiple sources.
+    
+    If search_query is provided, scrapes only for that query and skips stack filtering.
+    Otherwise, scrapes for default SEARCH_QUERIES and filters by stack.
+    """
     logger.info("Starting job scrape...")
     all_jobs: list[dict] = []
     seen_urls: set[str] = set()
 
-    for query in SEARCH_QUERIES:
+    queries = [search_query] if search_query else SEARCH_QUERIES
+    should_filter = search_query is None
+
+    for query in queries:
         try:
+            logger.info(f"Scraping for query: {query}")
             df = scrape_jobs(
                 site_name=["indeed", "linkedin"],
                 search_term=query,
@@ -44,7 +52,7 @@ def run_scrape() -> int:
                 title = str(row.get("title", ""))
                 description = str(row.get("description", ""))
 
-                if not _matches_stack(title, description):
+                if should_filter and not _matches_stack(title, description):
                     continue
 
                 all_jobs.append({

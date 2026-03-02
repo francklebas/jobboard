@@ -45,6 +45,6 @@ def list_jobs(q: str = "", source: str = ""):
 
 
 @app.post("/jobs/sync")
-def sync_jobs(background_tasks: BackgroundTasks):
-    background_tasks.add_task(run_scrape)
-    return {"status": "sync started"}
+def sync_jobs(background_tasks: BackgroundTasks, q: str = ""):
+    background_tasks.add_task(run_scrape, search_query=q if q else None)
+    return {"status": "sync started", "query": q}
