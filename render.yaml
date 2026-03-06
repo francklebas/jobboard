@@ -1,0 +1,38 @@
+services:
+  - type: web
+    name: jobboard-api
+    runtime: docker
+    dockerfilePath: ./api/Dockerfile
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: jobboard-db
+          property: connectionString
+
+  - type: web
+    name: jobboard-frontend
+    runtime: docker
+    dockerfilePath: ./frontend/Dockerfile
+    envVars:
+      - key: NUXT_PUBLIC_API_URL
+        value: https://jobboard-api.onrender.com
+      - key: NITRO_API_URL
+        value: https://jobboard-api.onrender.com
+
+  - type: cron
+    name: jobboard-scraper
+    runtime: docker
+    dockerfilePath: ./api/Dockerfile
+    schedule: "0 */6 * * *"
+    dockerCommand: python scripts/cron_scrape.py
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: jobboard-db
+          property: connectionString
+
+databases:
+  - name: jobboard-db
+    plan: free
+    databaseName: jobboard_db
+    user: jobboard_user

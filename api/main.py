@@ -1,20 +1,36 @@
+import asyncio
 import logging
 from contextlib import asynccontextmanager
-from fastapi import FastAPI, BackgroundTasks
-from fastapi.middleware.cors import CORSMiddleware
 
-import scheduler
+from alembic import command
+from alembic.config import Config
+from database import get_all_jobs, get_last_sync
+from fastapi import BackgroundTasks, FastAPI
+from fastapi.concurrency import run_in_threadpool
+from fastapi.middleware.cors import CORSMiddleware
 from scraper import run_scrape
-from redis_client import get_all_jobs, get_last_sync
 
 logging.basicConfig(level=logging.INFO)
 
 
+def run_migrations():
+    alembic_cfg = Config("alembic.ini")
+    command.upgrade(alembic_cfg, "head")
+
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    scheduler.start()
+    logging.info("Running Alembic migrations...")
+    await asyncio.get_event_loop().run_in_executor(None, run_migrations)
+    logging.info("Migrations done.")
+
+    # Run an initial scrape in the background if the database is completely empty.
+    # This prevents the "0 jobs" regression on the very first startup before the cron triggers.
+    if not get_all_jobs():
+        logging.info("Database is empty. Triggering an initial background scrape.")
+        asyncio.create_task(run_in_threadpool(run_scrape))
+
     yield
-    scheduler.shutdown()
 
 
 app = FastAPI(title="JobBoard API", lifespan=lifespan)
@@ -34,7 +50,8 @@ def list_jobs(q: str = "", source: str = ""):
     if q:
         q_lower = q.lower()
         jobs = [
-            j for j in jobs
+            j
+            for j in jobs
             if q_lower in j["title"].lower() or q_lower in j["description"].lower()
         ]
 

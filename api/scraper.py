@@ -1,7 +1,7 @@
 import logging
 from datetime import datetime, timezone
 from jobspy import scrape_jobs
-from redis_client import store_jobs, set_last_sync
+from database import store_jobs, set_last_sync
 
 logger = logging.getLogger(__name__)
 

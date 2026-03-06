@@ -27,6 +27,10 @@
         <option value="indeed">Indeed</option>
         <option value="linkedin">LinkedIn</option>
       </select>
+
+      <button class="btn-sync" :disabled="syncing" @click="sync">
+        {{ syncing ? "Syncing..." : "Sync Now" }}
+      </button>
     </div>
 
     <div class="shortcuts">
@@ -277,20 +281,20 @@ async function sync() {
 }
 .controls {
   display: flex;
-  gap: 10px;
+  gap: 15px;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   flex-wrap: wrap;
 }
 .search-group {
   display: flex;
-  gap: 5px;
+  gap: 10px;
 }
 .shortcuts {
   display: flex;
-  gap: 5px;
+  gap: 10px;
   align-items: center;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   flex-wrap: wrap;
 }
 .shortcuts button {
@@ -306,9 +310,9 @@ async function sync() {
 }
 .filters {
   display: flex;
-  gap: 10px;
+  gap: 15px;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   flex-wrap: wrap;
 }
 .filters button {
@@ -322,5 +326,20 @@ async function sync() {
   background: #007bff;
   color: white;
   border-color: #007bff;
+}
+.btn-sync {
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.btn-sync:hover {
+  background-color: #5a6268;
+}
+.btn-sync:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
 }
 </style>

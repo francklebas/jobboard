@@ -1,12 +1,16 @@
 services:
-  redis:
-    image: redis:7-alpine
+  postgres:
+    image: postgres:16
     ports:
-      - "6379:6379"
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: jobboard_db
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
     volumes:
-      - redis-data:/data
+      - postgres-data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD", "redis-cli", "ping"]
+      test: ["CMD-SHELL", "pg_isready -U user -d jobboard_db"]
       interval: 5s
       timeout: 3s
       retries: 5
@@ -16,10 +20,9 @@ services:
     ports:
       - "8000:8000"
     environment:
-      - REDIS_URL=redis://redis:6379
-      - SCRAPE_INTERVAL_HOURS=6
+      - DATABASE_URL=postgresql+psycopg2://user:password@postgres:5432/jobboard_db
     depends_on:
-      redis:
+      postgres:
         condition: service_healthy
     develop:
       watch:
@@ -41,4 +44,4 @@ services:
           path: ./frontend
 
 volumes:
-  redis-data:
+  postgres-data:
