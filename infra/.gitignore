@@ -1,0 +1,16 @@
+# State Terraform (contient des secrets, ne jamais commiter)
+*.tfstate
+*.tfstate.backup
+.terraform/
+.terraform.lock.hcl
+
+# Variables locales (clés, secrets)
+*.tfvars
+*.tfvars.json
+!example.tfvars
+
+# Logs bootstrap EC2
+*.log
+
+# OS
+.DS_Store
