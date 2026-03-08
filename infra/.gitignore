@@ -1,6 +1,7 @@
 # State Terraform (contient des secrets, ne jamais commiter)
 *.tfstate
 *.tfstate.backup
+*.tfstate.lock.info
 .terraform/
 .terraform.lock.hcl
 
