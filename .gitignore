@@ -32,4 +32,3 @@ Thumbs.db
 *.log
 
 # Lock files (generated per environment)
-bun.lock
