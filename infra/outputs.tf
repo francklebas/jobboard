@@ -15,5 +15,5 @@ output "frontend_url" {
 
 output "ssh_command" {
   description = "Commande SSH pour se connecter à l'instance"
-  value       = "ssh -i ~/.ssh/id_rsa ubuntu@${aws_eip.jobboard.public_ip}"
+  value       = "ssh -i ~/.ssh/id_ed25519 ubuntu@${aws_eip.jobboard.public_ip}"
 }

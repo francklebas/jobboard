@@ -34,7 +34,7 @@ data "aws_ami" "ubuntu" {
 # -------------------------------------------------------------------
 resource "aws_security_group" "jobboard" {
   name        = "jobboard-sg"
-  description = "Jobboard — SSH, API, Frontend"
+  description = "Jobboard - SSH, API, Frontend"
 
   ingress {
     description = "SSH"
