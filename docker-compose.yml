@@ -31,10 +31,8 @@ services:
 
   frontend:
     build: ./frontend
-    ports:
-      - "3000:3000"
     environment:
-      - NUXT_PUBLIC_API_URL=http://localhost:8000
+      - NUXT_PUBLIC_API_URL=https://jobboard-api-stockholm.duckdns.org
       - NITRO_API_URL=http://api:8000
     depends_on:
       - api
@@ -43,5 +41,19 @@ services:
         - action: restart
           path: ./frontend
 
+  caddy:
+    image: caddy:2-alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy-data:/data
+      - caddy-config:/config
+    depends_on:
+      - frontend
+
 volumes:
   postgres-data:
+  caddy-data:
+  caddy-config:

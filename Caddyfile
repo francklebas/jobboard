@@ -1,0 +1,7 @@
+jobboard-stockholm.duckdns.org {
+    reverse_proxy frontend:3000
+}
+
+jobboard-api-stockholm.duckdns.org {
+    reverse_proxy api:8000
+}
