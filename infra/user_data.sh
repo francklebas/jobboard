@@ -1,5 +1,13 @@
 #!/bin/bash
 set -euo pipefail
+
+# Guard : ne s'exécute qu'une seule fois (pas au reboot)
+LOCK_FILE="/var/log/user_data.done"
+if [ -f "$LOCK_FILE" ]; then
+  echo "Bootstrap déjà effectué, skip."
+  exit 0
+fi
+
 exec > /var/log/user_data.log 2>&1
 
 echo "=== [1/5] Mise à jour système ==="
@@ -17,15 +25,15 @@ git clone https://github.com/francklebas/jobboard.git /home/ubuntu/jobboard
 chown -R ubuntu:ubuntu /home/ubuntu/jobboard
 
 echo "=== [4/5] Démarrage docker compose ==="
-# Récupère l'IP publique depuis les métadonnées EC2
 PUBLIC_IP=$(curl -s http://169.254.169.254/latest/meta-data/public-ipv4)
 
 cd /home/ubuntu/jobboard
 NUXT_PUBLIC_API_URL="http://${PUBLIC_IP}:8000" \
 NITRO_API_URL="http://api:8000" \
-docker compose up -d --build
+sudo -u ubuntu docker compose up -d --build
 
 echo "=== [5/5] Crontab scrape toutes les 6h ==="
 (crontab -u ubuntu -l 2>/dev/null; echo "0 */6 * * * curl -s -X POST http://localhost:8000/jobs/sync") | crontab -u ubuntu -
 
+touch "$LOCK_FILE"
 echo "=== Bootstrap terminé — IP publique : ${PUBLIC_IP} ==="
