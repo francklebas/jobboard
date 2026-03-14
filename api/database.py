@@ -8,7 +8,7 @@ DATABASE_URL = os.getenv("DATABASE_URL", "postgresql+psycopg2://user:password@po
 
 Base = declarative_base()
 
-class Job(Base):
+class Job(Base):  # type: ignore[valid-type]
     __tablename__ = "jobs"
     id = Column(Integer, primary_key=True, index=True)
     title = Column(String(255), index=True)
@@ -19,7 +19,7 @@ class Job(Base):
     date_posted = Column(String(255)) # Storing as string for now, can be converted to DateTime if needed
     description = Column(Text)
 
-class LastSync(Base):
+class LastSync(Base):  # type: ignore[valid-type]
     __tablename__ = "last_sync"
     id = Column(Integer, primary_key=True)
     timestamp = Column(DateTime, default=datetime.utcnow)

@@ -20,7 +20,7 @@ def _matches_stack(title: str, description: str) -> bool:
     return any(kw in text for kw in STACK_KEYWORDS)
 
 
-def run_scrape(search_query: str = None) -> int:
+def run_scrape(search_query: str | None = None) -> int:
     """Scrape jobs from multiple sources.
     
     If search_query is provided, scrapes only for that query and skips stack filtering.

@@ -1,6 +1,690 @@
 [
   {
     "type": "post",
+    "id": "01kkkcar8z2sa1nkq4e9eepapf",
+    "slug": "hiqo-solutions-fullstack-php-vue-js-poland",
+    "title": "Fullstack PHP+Vue.js (Poland)",
+    "description": "<p><strong>We are looking for a skilled and proactive Fullstack Developer with deep expertise in the PHP/Laravel and Vue.js ecosystem to take ownership of the technical health and evolution of a long-term project. A key priority is leading the platform's lifecycle management, specifically upgrading PHP and Laravel versions to the latest releases.</strong></p>\n<p><strong>LOCATION</strong>: POLAND (Krakow/ Wroclaw office or remotely)</p>\n<p><strong>RESPONSIBILITIES:</strong></p>\n<ul>\n<li><strong>Maintain and evolve</strong> a dedicated web application using the Laravel framework and Vue.js components.</li>\n<li><strong>Lead the modernization</strong> of the project by executing version upgrades for PHP and Laravel core, refactoring legacy code, and implementing modern framework patterns.</li>\n<li><strong>Optimize application performance</strong>, focusing on database query optimization (Eloquent) and frontend rendering efficiency.</li>\n<li><strong>Troubleshoot and debug</strong> issues across the entire stack to ensure the projects stability and high availability in production.</li>\n<li><strong>Manage CI/CD practices</strong> and automated testing (PHPUnit, Pest) to ensure a reliable deployment process (<strong>GitHub Actions</strong> will be a plus).</li>\n</ul>\n<p><strong>REQUIREMENTS:</strong></p>\n<ul>\n<li><strong>4+ years of experience</strong> as a Fullstack Developer, with a strong background in long-term project support.</li>\n<li><strong>Expert-level knowledge</strong> of PHP and the Laravel framework (including Service Providers, Middleware, and Eloquent).</li>\n<li><strong>Experience in migrating and upgrading</strong> Laravel applications and managing PHP environment transitions.</li>\n<li><strong>Expertise in Vue.js</strong> with knowledge of the Composition API, reactivity, and lifecycle hooks.</li>\n<li><strong>Experience with Pinia or Vuex</strong> for managing global application state.</li>\n<li><strong>Proficiency with modern frontend tooling</strong>, specifically Vite, Webpack, or Laravel Mix.</li>\n<li><strong>Solid understanding of Database Management</strong>, including relational data modeling (MySQL/PostgreSQL) and caching (Redis).</li>\n<li><strong>Hands-on experience with Git</strong>, CI/CD pipelines.</li>\n</ul>\n<p><strong>NICE TO HAVE:</strong></p>\n<ul>\n<li><strong>Experience with AI-driven development</strong>: Active use of AI tools (e.g., GitHub Copilot, Cursor, Claude) to enhance the project.</li>\n<li><strong>Knowledge of Laravel ecosystem tools</strong> such as Horizon, Pulse, Nova, or Octane.</li>\n<li><strong>Experience with Docker</strong> and containerized development environments (Laravel Sail).</li>\n<li><strong>Understanding of Infrastructure as Code (IaC)</strong> or basic cloud DevOps skills.</li>\n<li><strong>Experience</strong> of deploying applications to <strong>Kubernetes (K8s).</strong></li>\n</ul>\n<p><strong>WE OFFER YOU:</strong></p>\n<ul>\n<li>Flexible working time - you can agree on it within the team</li>\n<li>Necessary tools and equipment</li>\n<li>Communication in English - only foreign customers, and international Teams</li>\n<li>Simple structure and 'open door' way of communication</li>\n<li>Full-time English teachers</li>\n<li>Medical insurance for employees</li>\n<li>HiQo University- internal education and training programs</li>\n<li>HIQO COINS - We have a system of rewarding employees for extracurricular activities</li>\n</ul>",
+    "locations": [
+      {
+        "city": "Krakow",
+        "state": null,
+        "country": "PL"
+      },
+      {
+        "city": "Wroclaw",
+        "state": null,
+        "country": "PL"
+      }
+    ],
+    "work_type": [
+      "full-time"
+    ],
+    "work_place": [
+      "on-site",
+      "remote"
+    ],
+    "seniority": [
+      "mid-level",
+      "senior"
+    ],
+    "salary": null,
+    "source_url": "https://www.careers-page.com/hiqo-solutions/job/7X48XXVX",
+    "apply_url": "https://www.careers-page.com/hiqo-solutions/job/7X48XXVX/apply",
+    "organization": {
+      "id": "01k76th5hnk0s5mafvv1n8kmcz",
+      "name": "HiQo Solutions",
+      "domain": "hiqo-solutions.com",
+      "logo": "01k76th5hnk0s5mafvv1n8kmcz_1760092002.png",
+      "links": null
+    },
+    "published_at": "2026-03-13T10:36:56.000000Z",
+    "open": true,
+    "status": "published",
+    "meta": {
+      "frameworks": [
+        {
+          "name": "vue",
+          "type": "preferred"
+        }
+      ],
+      "meta_frameworks": []
+    },
+    "notes": null,
+    "tracked": null
+  },
+  {
+    "type": "post",
+    "id": "01kkhjjh6nf666znargwt6me10",
+    "slug": "pont-connects-e-k-software-developer-m-w-d-python-linux-remote",
+    "title": "Software Developer (m/w/d) Python & Linux // REMOTE",
+    "description": "<p>Für einen langjährigen Partner bin ich auf der Suche nach mehreren Software Entwicklern (m/w/d) mit Python &amp; Linux Erfahrung für eine 100% REMOTE-Position.</p>\n<h2>Aufgaben</h2>\n<ul>\n<li>Du implementierst und optimierst Dienste und Schnittstellen – hauptsächlich in Python auf Linux-Systemen</li>\n<li>Du sorgst für eine angemessene Testabdeckung und stellst sicher, dass die Lösungen robust, wartbar und zuverlässig bleiben</li>\n<li>Du entwickelst in einem agilen Team und bringst dich aktiv in Planung, Umsetzung und kontinuierliche Verbesserung ein</li>\n<li>Du entwickelst skalierbare Backend-Systeme und arbeitest mit PostgreSQL-Datenbanken sowie LDAP-Verzeichnisdiensten wie Samba und/oder OpenLDAP</li>\n<li>Du erstellst und betreibst containerisierte Anwendungen mit Docker</li>\n</ul>\n<h2>Qualifikation</h2>\n<ul>\n<li>Python-Expertise: Du entwickelst seit mindestens drei Jahren mit Python in Linux-Umgebungen</li>\n<li>Datenbankkenntnisse: Du hast praktische Erfahrung mit PostgreSQL.</li>\n<li>LDAP-Know-how: Du kennst dich mit LDAP-Verzeichnisdiensten aus, idealerweise mit Samba und/oder OpenLDAP</li>\n<li>Du bist sicher im Umgang mit Docker zur Erstellung von Containern</li>\n<li>Architekturverständnis: Du entwickelst skalierbare Backend-Systeme, die auch in größeren Umgebungen zuverlässig funktionieren</li>\n<li>Du hast Erfahrung mit FastAPI, Playwright und pytest</li>\n<li>Du bringst Kenntnisse in JavaScript und idealerweise Vue.js mit</li>\n<li>Du bist mit Debian Linux und dessen Paketverwaltung vertraut</li>\n<li>Erfahrung im Bereich Authentifizierungs- und Autorisierungslösungen</li>\n</ul>",
+    "locations": null,
+    "work_type": [
+      "full-time"
+    ],
+    "work_place": [
+      "remote"
+    ],
+    "seniority": [
+      "mid-level"
+    ],
+    "salary": null,
+    "source_url": "https://join.com/jobs/15842959-software-developer-m-w-d-python-und-linux-remote",
+    "apply_url": null,
+    "organization": {
+      "id": "01ka38h433vjvk6xzn1esy4r6t",
+      "name": "Pont Connects e.K.",
+      "domain": "pont-connects.de",
+      "logo": "01ka38h433vjvk6xzn1esy4r6t_1763193688.png",
+      "links": []
+    },
+    "published_at": "2026-03-12T14:52:41.000000Z",
+    "open": true,
+    "status": "published",
+    "meta": {
+      "frameworks": [
+        {
+          "name": "vue",
+          "type": "preferred"
+        }
+      ],
+      "meta_frameworks": []
+    },
+    "notes": null,
+    "tracked": null
+  },
+  {
+    "type": "post",
+    "id": "01kkh2sv3ctj3mk3j806tnarec",
+    "slug": "highlevel-product-solution-engineer-wordpress",
+    "title": "Product Solution Engineer - Wordpress",
+    "locations": [
+      {
+        "city": null,
+        "state": null,
+        "country": "IN"
+      }
+    ],
+    "work_type": [
+      "full-time"
+    ],
+    "work_place": [
+      "remote"
+    ],
+    "seniority": [
+      "mid-level"
+    ],
+    "salary": null,
+    "published_at": "2026-03-12T10:24:27.000000Z",
+    "open": false,
+    "status": "published",
+    "meta": {
+      "frameworks": [
+        {
+          "name": "vue",
+          "type": "preferred"
+        }
+      ],
+      "meta_frameworks": []
+    },
+    "notes": null,
+    "tracked": null
+  },
+  {
+    "type": "post",
+    "id": "01kkgss4qn8xmvj86aybp8qs77",
+    "slug": "docplanner-frontend-developer-100-remote-friendly-within-poland-2",
+    "title": "Frontend Developer (100% remote-friendly within Poland)",
+    "locations": [
+      {
+        "city": "Warsaw",
+        "state": null,
+        "country": "PL"
+      },
+      {
+        "city": null,
+        "state": null,
+        "country": "PL"
+      }
+    ],
+    "work_type": [
+      "full-time"
+    ],
+    "work_place": [
+      "remote",
+      "hybrid"
+    ],
+    "seniority": [
+      "mid-level",
+      "senior"
+    ],
+    "salary": null,
+    "published_at": "2026-03-12T09:35:22.000000Z",
+    "open": false,
+    "status": "published",
+    "meta": {
+      "frameworks": [
+        {
+          "name": "vue",
+          "type": "preferred"
+        }
+      ],
+      "meta_frameworks": []
+    },
+    "notes": null,
+    "tracked": null
+  },
+  {
+    "type": "post",
+    "id": "01kkgst2n1ap2wgte4j4wg6fq3",
+    "slug": "docplanner-frontend-developer-100-remote-friendly-within-poland",
+    "title": "Frontend Developer (100% remote-friendly within Poland)",
+    "locations": [
+      {
+        "city": "Warsaw",
+        "state": null,
+        "country": "PL"
+      }
+    ],
+    "work_type": [
+      "full-time"
+    ],
+    "work_place": [
+      "remote",
+      "hybrid"
+    ],
+    "seniority": [
+      "mid-level",
+      "senior"
+    ],
+    "salary": null,
+    "published_at": "2026-03-12T09:35:22.000000Z",
+    "open": false,
+    "status": "published",
+    "meta": {
+      "frameworks": [
+        {
+          "name": "vue",
+          "type": "preferred"
+        }
+      ],
+      "meta_frameworks": []
+    },
+    "notes": null,
+    "tracked": null
+  },
+  {
+    "type": "post",
+    "id": "01kkgdxac9j6npd6b3m5e4k8p7",
+    "slug": "skydropx-frenet-analista-desenvolvedor-fullstack-pleno",
+    "title": "Analista Desenvolvedor Fullstack Pleno",
+    "locations": [
+      {
+        "city": null,
+        "state": null,
+        "country": "BR"
+      }
+    ],
+    "work_type": [
+      "full-time"
+    ],
+    "work_place": [
+      "remote"
+    ],
+    "seniority": [
+      "mid-level"
+    ],
+    "salary": null,
+    "published_at": "2026-03-11T20:41:54.000000Z",
+    "open": false,
+    "status": "published",
+    "meta": {
+      "frameworks": [
+        {
+          "name": "vue",
+          "type": "preferred"
+        }
+      ],
+      "meta_frameworks": []
+    },
+    "notes": null,
+    "tracked": null
+  },
+  {
+    "type": "post",
+    "id": "01kkf4mf4z9mazzeqppgdywer0",
+    "slug": "kitware-full-stack-web-developer-for-scientific-applications",
+    "title": "Full-Stack Web Developer for Scientific Applications",
+    "locations": [
+      {
+        "city": "Clifton Park",
+        "state": "NY",
+        "country": "US"
+      },
+      {
+        "city": null,
+        "state": "AL",
+        "country": "US"
+      },
+      {
+        "city": null,
+        "state": "AZ",
+        "country": "US"
+      },
+      {
+        "city": null,
+        "state": "CO",
+        "country": "US"
+      },
+      {
+        "city": null,
+        "state": "DC",
+        "country": "US"
+      },
+      {
+        "city": null,
+        "state": "FL",
+        "country": "US"
+      },
+      {
+        "city": null,
+        "state": "GA",
+        "country": "US"
+      },
+      {
+        "city": null,
+        "state": "IL",
+        "country": "US"
+      },
+      {
+        "city": null,
+        "state": "IN",
+        "country": "US"
+      },
+      {
+        "city": null,
+        "state": "MA",
+        "country": "US"
+      },
+      {
+        "city": null,
+        "state": "MD",
+        "country": "US"
+      },
+      {
+        "city": null,
+        "state": "ME",
+        "country": "US"
+      },
+      {
+        "city": null,
+        "state": "MN",
+        "country": "US"
+      },
+      {
+        "city": null,
+        "state": "NC",
+        "country": "US"
+      },
+      {
+        "city": null,
+        "state": "NM",
+        "country": "US"
+      },
+      {
+        "city": null,
+        "state": "NY",
+        "country": "US"
+      },
+      {
+        "city": null,
+        "state": "OH",
+        "country": "US"
+      },
+      {
+        "city": null,
+        "state": "OR",
+        "country": "US"
+      },
+      {
+        "city": null,
+        "state": "PA",
+        "country": "US"
+      },
+      {
+        "city": null,
+        "state": "TN",
+        "country": "US"
+      },
+      {
+        "city": null,
+        "state": "TX",
+        "country": "US"
+      },
+      {
+        "city": null,
+        "state": "UT",
+        "country": "US"
+      },
+      {
+        "city": null,
+        "state": "VA",
+        "country": "US"
+      },
+      {
+        "city": null,
+        "state": "WI",
+        "country": "US"
+      }
+    ],
+    "work_type": [
+      "full-time"
+    ],
+    "work_place": [
+      "remote"
+    ],
+    "seniority": [
+      "mid-level"
+    ],
+    "salary": {
+      "currency": "USD",
+      "min": 85000,
+      "max": 115000,
+      "period": "year"
+    },
+    "published_at": "2026-03-11T18:43:18.000000Z",
+    "open": false,
+    "status": "published",
+    "meta": {
+      "frameworks": [
+        {
+          "name": "vue",
+          "type": "preferred"
+        }
+      ],
+      "meta_frameworks": []
+    },
+    "notes": null,
+    "tracked": null
+  },
+  {
+    "type": "post",
+    "id": "01kkewe631zagm3axbq77f2sme",
+    "slug": "nexton-developpeur-full-stack-laravel-vue-js-h-f",
+    "title": "Développeur Full Stack Laravel / Vue.js H/F",
+    "locations": [
+      {
+        "city": "Paris",
+        "state": null,
+        "country": "FR"
+      }
+    ],
+    "work_type": [
+      "full-time"
+    ],
+    "work_place": [
+      "remote"
+    ],
+    "seniority": [
+      "mid-level",
+      "senior"
+    ],
+    "salary": null,
+    "published_at": "2026-03-11T14:57:08.000000Z",
+    "open": false,
+    "status": "published",
+    "meta": {
+      "frameworks": [
+        {
+          "name": "vue",
+          "type": "preferred"
+        }
+      ],
+      "meta_frameworks": []
+    },
+    "notes": null,
+    "tracked": null
+  },
+  {
+    "type": "post",
+    "id": "01kkdwfayzrg64a1xrnstyp4tn",
+    "slug": "precision-aq-software-engineer-ii",
+    "title": "Software Engineer II",
+    "locations": [
+      {
+        "city": null,
+        "state": null,
+        "country": "IN"
+      }
+    ],
+    "work_type": [
+      "full-time"
+    ],
+    "work_place": [
+      "remote"
+    ],
+    "seniority": [
+      "mid-level"
+    ],
+    "salary": null,
+    "published_at": "2026-03-11T01:28:28.000000Z",
+    "open": false,
+    "status": "published",
+    "meta": {
+      "frameworks": [
+        {
+          "name": "vue",
+          "type": "preferred"
+        }
+      ],
+      "meta_frameworks": []
+    },
+    "notes": null,
+    "tracked": null
+  },
+  {
+    "type": "post",
+    "id": "01kkdw1bewcv7yvarfyyv11aak",
+    "slug": "precision-medicine-group-software-engineer-ii",
+    "title": "Software Engineer II",
+    "locations": [
+      {
+        "city": null,
+        "state": null,
+        "country": "IN"
+      }
+    ],
+    "work_type": [
+      "full-time"
+    ],
+    "work_place": [
+      "remote"
+    ],
+    "seniority": [
+      "mid-level"
+    ],
+    "salary": null,
+    "published_at": "2026-03-11T01:23:35.000000Z",
+    "open": false,
+    "status": "published",
+    "meta": {
+      "frameworks": [
+        {
+          "name": "vue",
+          "type": "preferred"
+        }
+      ],
+      "meta_frameworks": []
+    },
+    "notes": null,
+    "tracked": null
+  },
+  {
+    "type": "post",
+    "id": "01kketk2aafepzy04px2rbtjjx",
+    "slug": "cohere-technology-group-llc-java-full-stack-engineer-2",
+    "title": "Java Full Stack Engineer",
+    "description": "<p>**Java Full Stack Engineer:</p>\n<p>Colorado Springs, CO.**</p>\n<p><strong>Job Description:</strong><br />\nCohere is looking for a self-starting, team-oriented Mid-to-Senior Software Engineer to join our dynamic development team in supporting a Government customer. The team is researching and designing prototypes for large-scale distributed enterprise micro-service applications using web technologies, distributed computation and storage frameworks, and sophisticated, cutting-edge domain analytics, with the system hosted on virtualized and cloud-computing platforms. The successful candidate will have the ability to work both independently with little supervision as well as engage with a team to achieve overall project objectives.</p>\n<p><strong>Essential Functions:</strong></p>\n<p>The Java Full Stack Engineer participates in a development team using Agile methodologies combined with mature software practices and technology-supported development infrastructure. The Java Full Stack Engineer will execute full lifecycle agile workflow including daily SCRUMs, story grooming and bidding, and sprint execution. The Java Full Stack Engineer will research, design, develop, and extend the software baseline to implement new capabilities and to mature existing capabilities using key enabling technologies and frameworks. The Java Full Stack Engineer will help maintain the deployed system, diagnose and resolve issues, and provide support to end-users as needed. The Java Full Stack Engineer will provide technical and methodological guidance to the team, while helping steer the team to be self-reliant and highly effective at meeting project objectives.<br />\nThe ideal candidate will have outstanding technical talent; have the desire to continuously learn and apply new skills and technologies; and be eager to take on hard problems and develop successful solutions to achieve the overall mission.- Backend:\n- Spring and/or Spring Boot frameworks; web endpoint controllers, Kafka listeners, JPA framework, Testcontainers\n- Microservice architecture, message passing state sharing\n- Database – PostgreSQL or any SQL (Experience with PostgreSQL or similar Relational Database Management System (RDBMS)</p>\n<ul>\n<li>\n<p>Web app server</p>\n<ul>\n<li>Familiar (Experience preferred) with open-source web application server such as Apache HTTP, Tomcat</li>\n</ul>\n</li>\n<li>\n<p>Middle tier – messaging systems</p>\n<ul>\n<li>Experience using the following:\n<ul>\n<li>Kafka – or any Java-based message broker – including managing topics, filtering with headers, supporting broad distributed services</li>\n</ul>\n</li>\n<li>Experience in development and usage with RESTful web services including asynchronous futures</li>\n</ul>\n</li>\n<li>\n<p>Frontend:</p>\n<ul>\n<li>Experience with development using Vue.js front-end web application platform or similar web framework</li>\n</ul>\n</li>\n</ul>\n<p><strong>Qualifications:</strong>- B.S. degree Computer Science, Systems Engineering, Information Systems, Computer Engineering, or a related discipline and 9+ years of experience or M.S. degree and 7 years of experience.</p>\n<ul>\n<li>4 years’ experience Java development with Spring and/or Spring Boot framework establishing services for each tier (backend, frontend, web, and middle).</li>\n<li>3 Years' experience with Vue.js front-end web application platform and UI components or similar web framework.</li>\n<li>3 years’ experience with middle tier messaging systems, Kafka or similar and development and usage with RESTful web services</li>\n<li>3 plus years' experience with Java development with Relational Database Management.</li>\n</ul>\n<p><strong>Preferred Qualifications:</strong></p>\n<p>Experience in modeling and simulation, designing and developing secure Cloud-Agnostic applications using Vue.js, Quasar, Spring Boot, AWS Lambda, and microservice architectures.</p>",
+    "locations": [
+      {
+        "city": "Colorado Springs",
+        "state": "CO",
+        "country": "US"
+      }
+    ],
+    "work_type": [
+      "full-time"
+    ],
+    "work_place": [
+      "remote"
+    ],
+    "seniority": [
+      "mid-level",
+      "senior"
+    ],
+    "salary": null,
+    "source_url": "http://coheretechnology.applytojob.com/apply/P4X5WBJhkY/Java-Full-Stack-Engineer",
+    "apply_url": null,
+    "organization": {
+      "id": "01kh8xwz7z5y792r5z276h12c2",
+      "name": "Cohere Technology Group LLC",
+      "domain": "coheretechnology.com",
+      "logo": null,
+      "links": null
+    },
+    "published_at": "2026-03-11T00:00:00.000000Z",
+    "open": true,
+    "status": "published",
+    "meta": {
+      "frameworks": [
+        {
+          "name": "vue",
+          "type": "preferred"
+        }
+      ],
+      "meta_frameworks": []
+    },
+    "notes": null,
+    "tracked": null
+  },
+  {
+    "type": "post",
+    "id": "01kkbxts1hf481a5tnan8tywdp",
+    "slug": "kyivstar-inzhener-z-rozvitku-ta-pidtrimki-bpms",
+    "title": "Інженер з розвитку та підтримки BPMS",
+    "locations": [
+      {
+        "city": null,
+        "state": null,
+        "country": "UA"
+      }
+    ],
+    "work_type": [
+      "full-time"
+    ],
+    "work_place": [
+      "remote"
+    ],
+    "seniority": [
+      "mid-level"
+    ],
+    "salary": null,
+    "published_at": "2026-03-10T11:43:19.000000Z",
+    "open": false,
+    "status": "published",
+    "meta": {
+      "frameworks": [
+        {
+          "name": "vue",
+          "type": "preferred"
+        }
+      ],
+      "meta_frameworks": []
+    },
+    "notes": null,
+    "tracked": null
+  },
+  {
+    "type": "post",
+    "id": "01kkbysv2vwae9qwjqmzzrdnym",
+    "slug": "foodics-software-engineer-frontend-mid",
+    "title": "Software Engineer (Frontend - Mid)",
+    "locations": [
+      {
+        "city": "Cairo",
+        "state": "Cairo Governorate",
+        "country": "EG"
+      }
+    ],
+    "work_type": [
+      "full-time"
+    ],
+    "work_place": [
+      "remote"
+    ],
+    "seniority": [
+      "mid-level"
+    ],
+    "salary": null,
+    "published_at": "2026-03-10T11:12:47.000000Z",
+    "open": false,
+    "status": "published",
+    "meta": {
+      "frameworks": [
+        {
+          "name": "vue",
+          "type": "preferred"
+        }
+      ],
+      "meta_frameworks": [
+        {
+          "name": "nuxt",
+          "type": "preferred"
+        }
+      ]
+    },
+    "notes": null,
+    "tracked": null
+  },
+  {
+    "type": "post",
+    "id": "01kka4mhmaxhfmsx5wbvte8fsw",
+    "slug": "jun-group-platform-engineer-remote-contract",
+    "title": "Platform Engineer (Remote / Contract)",
+    "locations": null,
+    "work_type": [
+      "contract"
+    ],
+    "work_place": [
+      "remote"
+    ],
+    "seniority": [
+      "mid-level"
+    ],
+    "salary": {
+      "currency": "USD",
+      "min": 30,
+      "max": 40,
+      "period": "hour"
+    },
+    "published_at": "2026-03-09T13:50:11.000000Z",
+    "open": false,
+    "status": "published",
+    "meta": {
+      "frameworks": [
+        {
+          "name": "vue",
+          "type": "preferred"
+        }
+      ],
+      "meta_frameworks": []
+    },
+    "notes": null,
+    "tracked": null
+  },
+  {
+    "type": "post",
     "id": "01kk91czkq5mt8ngcrve7653de",
     "slug": "360learning-website-software-engineer",
     "title": "Website Software Engineer",
@@ -42,6 +726,42 @@
           "type": "preferred"
         }
       ]
+    },
+    "notes": null,
+    "tracked": null
+  },
+  {
+    "type": "post",
+    "id": "01kk9s6pmz21nay1kjmf5jq5h8",
+    "slug": "team-up-services-full-stack-developer",
+    "title": "Full-Stack Developer",
+    "locations": null,
+    "work_type": [
+      "full-time"
+    ],
+    "work_place": [
+      "remote"
+    ],
+    "seniority": [
+      "mid-level"
+    ],
+    "salary": {
+      "currency": "EUR",
+      "min": 1900,
+      "max": 1900,
+      "period": "month"
+    },
+    "published_at": "2026-03-09T00:00:00.000000Z",
+    "open": false,
+    "status": "published",
+    "meta": {
+      "frameworks": [
+        {
+          "name": "vue",
+          "type": "preferred"
+        }
+      ],
+      "meta_frameworks": []
     },
     "notes": null,
     "tracked": null
@@ -533,8 +1253,8 @@
   },
   {
     "type": "post",
-    "id": "01kjvtz28zmja5qx1wgj0p1fsx",
-    "slug": "xplor-software-engineer-php-laravel",
+    "id": "01kk1dd1z79gq054w1j4w0sfy1",
+    "slug": "xplor-software-engineer-php-laravel-2",
     "title": "Software Engineer (PHP/Laravel)",
     "locations": [
       {
@@ -550,8 +1270,7 @@
       "remote"
     ],
     "seniority": [
-      "mid-level",
-      "senior"
+      "mid-level"
     ],
     "salary": null,
     "published_at": "2026-03-04T05:03:53.000000Z",
@@ -571,8 +1290,8 @@
   },
   {
     "type": "post",
-    "id": "01kk1dd1z79gq054w1j4w0sfy1",
-    "slug": "xplor-software-engineer-php-laravel-2",
+    "id": "01kjvtz28zmja5qx1wgj0p1fsx",
+    "slug": "xplor-software-engineer-php-laravel",
     "title": "Software Engineer (PHP/Laravel)",
     "locations": [
       {
@@ -588,7 +1307,8 @@
       "remote"
     ],
     "seniority": [
-      "mid-level"
+      "mid-level",
+      "senior"
     ],
     "salary": null,
     "published_at": "2026-03-04T05:03:53.000000Z",
@@ -676,43 +1396,6 @@
     ],
     "salary": null,
     "published_at": "2026-03-02T12:21:32.000000Z",
-    "open": false,
-    "status": "published",
-    "meta": {
-      "frameworks": [
-        {
-          "name": "vue",
-          "type": "optional"
-        }
-      ],
-      "meta_frameworks": []
-    },
-    "notes": null,
-    "tracked": null
-  },
-  {
-    "type": "post",
-    "id": "01kjpp42rtarb0v4zjcxzn9b1a",
-    "slug": "grab-software-engineer-backend",
-    "title": "Software Engineer, Backend",
-    "locations": [
-      {
-        "city": "Ho Chi Minh City",
-        "state": "",
-        "country": "VN"
-      }
-    ],
-    "work_type": [
-      "full-time"
-    ],
-    "work_place": [
-      "remote"
-    ],
-    "seniority": [
-      "mid-level"
-    ],
-    "salary": null,
-    "published_at": "2026-03-02T03:20:33.000000Z",
     "open": false,
     "status": "published",
     "meta": {
@@ -1348,16 +2031,10 @@
   },
   {
     "type": "post",
-    "id": "01kjavada3a29txz8wx1ncp1hj",
-    "slug": "nordhealth-technical-support-developer-laravel-vue-3",
+    "id": "01kjavwtbbj6vwtbdrkxywrqwp",
+    "slug": "nordhealth-technical-support-developer-laravel-vue-4",
     "title": "Technical Support Developer (Laravel / Vue)",
-    "locations": [
-      {
-        "city": "",
-        "state": "",
-        "country": ""
-      }
-    ],
+    "locations": [],
     "work_type": [
       "full-time"
     ],
@@ -1386,10 +2063,16 @@
   },
   {
     "type": "post",
-    "id": "01kjavwtbbj6vwtbdrkxywrqwp",
-    "slug": "nordhealth-technical-support-developer-laravel-vue-4",
+    "id": "01kjavada3a29txz8wx1ncp1hj",
+    "slug": "nordhealth-technical-support-developer-laravel-vue-3",
     "title": "Technical Support Developer (Laravel / Vue)",
-    "locations": [],
+    "locations": [
+      {
+        "city": "",
+        "state": "",
+        "country": ""
+      }
+    ],
     "work_type": [
       "full-time"
     ],
@@ -1855,6 +2538,44 @@
     "status": "published",
     "meta": {
       "languages": [],
+      "frameworks": [
+        {
+          "name": "vue",
+          "type": "preferred"
+        }
+      ],
+      "meta_frameworks": []
+    },
+    "notes": null,
+    "tracked": null
+  },
+  {
+    "type": "post",
+    "id": "01kke8v635g6gcp5nr67532a0y",
+    "slug": "littlelives-fullstack-engineer-middle-senior",
+    "title": "Fullstack Engineer (Middle-Senior)",
+    "locations": [
+      {
+        "city": "Jakarta",
+        "state": null,
+        "country": "ID"
+      }
+    ],
+    "work_type": [
+      "full-time"
+    ],
+    "work_place": [
+      "remote"
+    ],
+    "seniority": [
+      "mid-level",
+      "senior"
+    ],
+    "salary": null,
+    "published_at": "2026-02-18T03:10:31.000000Z",
+    "open": false,
+    "status": "published",
+    "meta": {
       "frameworks": [
         {
           "name": "vue",
@@ -2488,6 +3209,54 @@
   },
   {
     "type": "post",
+    "id": "01kj50sdbtyvhgd8fexvtwche0",
+    "slug": "highlightta-software-engineer-php-laravel-3",
+    "title": "Software Engineer - PHP/Laravel",
+    "locations": [
+      {
+        "city": "",
+        "state": "",
+        "country": "NZ"
+      },
+      {
+        "city": "",
+        "state": "",
+        "country": "BR"
+      }
+    ],
+    "work_type": [
+      "contract"
+    ],
+    "work_place": [
+      "remote"
+    ],
+    "seniority": [
+      "mid-level"
+    ],
+    "salary": null,
+    "published_at": "2026-02-10T18:06:01.000000Z",
+    "open": false,
+    "status": "published",
+    "meta": {
+      "languages": [
+        {
+          "name": "typescript",
+          "type": "optional"
+        }
+      ],
+      "frameworks": [
+        {
+          "name": "vue",
+          "type": "preferred"
+        }
+      ],
+      "meta_frameworks": []
+    },
+    "notes": null,
+    "tracked": null
+  },
+  {
+    "type": "post",
     "id": "01kh4fkgyzhpb08qbktt5xyp72",
     "slug": "highlightta-software-engineer-php-laravel",
     "title": "Software Engineer - PHP/Laravel",
@@ -2536,9 +3305,9 @@
   },
   {
     "type": "post",
-    "id": "01kj50sdbtyvhgd8fexvtwche0",
-    "slug": "highlightta-software-engineer-php-laravel-3",
-    "title": "Software Engineer - PHP/Laravel",
+    "id": "01kh4fkeechvzsa3ftp7nsv0g4",
+    "slug": "highlightta-software-engineer-javascript",
+    "title": "Software Engineer - JavaScript",
     "locations": [
       {
         "city": "",
@@ -2555,20 +3324,21 @@
       "contract"
     ],
     "work_place": [
+      "on-site",
       "remote"
     ],
     "seniority": [
       "mid-level"
     ],
     "salary": null,
-    "published_at": "2026-02-10T18:06:01.000000Z",
+    "published_at": "2026-02-10T18:05:52.000000Z",
     "open": false,
     "status": "published",
     "meta": {
       "languages": [
         {
-          "name": "typescript",
-          "type": "optional"
+          "name": "javascript",
+          "type": "preferred"
         }
       ],
       "frameworks": [
@@ -2644,9 +3414,9 @@
   },
   {
     "type": "post",
-    "id": "01kh4fkeechvzsa3ftp7nsv0g4",
-    "slug": "highlightta-software-engineer-javascript",
-    "title": "Software Engineer - JavaScript",
+    "id": "01kj50s92mh7p80rqtdpc7qybj",
+    "slug": "highlightta-agentic-ai-engineer-3",
+    "title": "Agentic/AI Engineer",
     "locations": [
       {
         "city": "",
@@ -2660,23 +3430,23 @@
       }
     ],
     "work_type": [
-      "contract"
+      "full-time"
     ],
     "work_place": [
-      "on-site",
       "remote"
     ],
     "seniority": [
-      "mid-level"
+      "mid-level",
+      "senior"
     ],
     "salary": null,
-    "published_at": "2026-02-10T18:05:52.000000Z",
+    "published_at": "2026-02-10T13:16:18.000000Z",
     "open": false,
     "status": "published",
     "meta": {
       "languages": [
         {
-          "name": "javascript",
+          "name": "typescript",
           "type": "preferred"
         }
       ],
@@ -2686,7 +3456,12 @@
           "type": "preferred"
         }
       ],
-      "meta_frameworks": []
+      "meta_frameworks": [
+        {
+          "name": "single-spa",
+          "type": "preferred"
+        }
+      ]
     },
     "notes": null,
     "tracked": null
@@ -2760,19 +3535,14 @@
   },
   {
     "type": "post",
-    "id": "01kj50s92mh7p80rqtdpc7qybj",
-    "slug": "highlightta-agentic-ai-engineer-3",
-    "title": "Agentic/AI Engineer",
+    "id": "01kh95xgrcadzg1t6m4vwg4yjf",
+    "slug": "lemfi-web-engineer",
+    "title": "Web Engineer",
     "locations": [
       {
-        "city": "",
-        "state": "",
-        "country": "NZ"
-      },
-      {
-        "city": "",
-        "state": "",
-        "country": "BR"
+        "city": "Lagos",
+        "state": "Lagos",
+        "country": "NG"
       }
     ],
     "work_type": [
@@ -2786,13 +3556,17 @@
       "senior"
     ],
     "salary": null,
-    "published_at": "2026-02-10T13:16:18.000000Z",
+    "published_at": "2026-02-10T10:25:09.000000Z",
     "open": false,
     "status": "published",
     "meta": {
       "languages": [
         {
           "name": "typescript",
+          "type": "preferred"
+        },
+        {
+          "name": "javascript",
           "type": "preferred"
         }
       ],
@@ -2804,7 +3578,7 @@
       ],
       "meta_frameworks": [
         {
-          "name": "single-spa",
+          "name": "nuxt",
           "type": "preferred"
         }
       ]
@@ -2868,114 +3642,6 @@
       "languages": [
         {
           "name": "typescript",
-          "type": "preferred"
-        }
-      ],
-      "frameworks": [
-        {
-          "name": "vue",
-          "type": "preferred"
-        }
-      ],
-      "meta_frameworks": []
-    },
-    "notes": null,
-    "tracked": null
-  },
-  {
-    "type": "post",
-    "id": "01kh1feh7qj9npqfdtw3z3f4pk",
-    "slug": "maasil-inc-developpeur-front-end-vue-js-twig",
-    "title": "Développeur Front-End (Vue.js./ Twig)",
-    "description": "<p>Lentreprise :</p>\n<p>MaaSil Inc est une entreprise dexternalisation de services vers Madagascar. Nous proposons à nos clients français, suisses ou belges, des consultants situés à Madagascar. Nous proposons tous types de profils. Notre objectif est de proposer les meilleurs de Madagascar pour nos clients. Et de garantir des conditions salariales qui soient optimales pour nos équipes.</p>\n<p>Missions et compétences :</p>\n<ul>\n<li>Développer et maintenir les interfaces front-end de lapplication.</li>\n<li>Travailler avec <strong>JavaScript</strong>, <strong>Twig</strong> et <strong>Vue.js</strong>.</li>\n<li>Intégrer les API back-end et assurer une bonne communication front/back.</li>\n<li>Maintenir la lisibilité, la cohérence et la performance du code front-end.</li>\n<li>Comprendre et évoluer dans une application existante de grande taille.</li>\n<li>Collaborer avec les développeurs back-end et les équipes produit.</li>\n<li>Expérience solide en <strong>JavaScript</strong>.</li>\n<li>Bonne maîtrise de <strong>Twig</strong> et <strong>Vue.js</strong>.</li>\n<li>Habitude de travailler sur des <strong>applications vastes et complexes</strong>.</li>\n<li>Capacité à analyser un code existant et à sy intégrer rapidement.</li>\n<li>Sens du détail sur lergonomie, la maintenabilité et la performance.</li>\n</ul>\n<p>Rémunération / Avantages :</p>\n<ul>\n<li>Salaire à négocier selon profil – MaaSil Inc peut se permettre doffrir les meilleurs salaires au vu de la qualité des missions délégués par nos clients</li>\n<li>Commissions supplémentaires avec Objectif qualitatif et quantitatif</li>\n<li>+10% de salaire / 6 mois</li>\n<li>Mutuelle Complémentaire</li>\n<li>Retraite Complémentaire</li>\n<li>Navette retour le soir</li>\n</ul>\n<p>Profil:</p>\n<ul>\n<li><strong>Maîtrise PARFAITE du Français</strong> (lu, écrit, parlé)</li>\n<li><strong>Maîtrise de langlais technique est indispensable</strong></li>\n<li>Bac+5 en informatique</li>\n<li><strong>Autonomie EXIGÉE</strong> (Vous serez en relation direct avec notre client, professionnalisme exigé)</li>\n<li><strong>Polyvalence</strong></li>\n<li><strong>Force de proposition</strong></li>\n<li>Esprit analytique</li>\n</ul>\n<p>Horaire de travail (heures françaises) : 08-17h OU 10-19h. Les horaires pourraient évoluer selon les besoins du client mais le nombre dheures travaillées restent inchangé = 40h/semaine</p>",
-    "locations": [
-      {
-        "city": "Cotonou",
-        "state": "Littoral",
-        "country": "BJ"
-      }
-    ],
-    "work_type": [
-      "full-time"
-    ],
-    "work_place": [
-      "remote"
-    ],
-    "seniority": [
-      "mid-level",
-      "senior"
-    ],
-    "salary": null,
-    "source_url": "https://www.careers-page.com/maasil-inc/job/W366W4W9",
-    "apply_url": "https://www.careers-page.com/maasil-inc/job/W366W4W9/apply",
-    "organization": {
-      "id": "01k76td8mnct2z8hz09zrq0zcc",
-      "name": "MaaSIl Inc",
-      "domain": null,
-      "logo": "01k76td8mnct2z8hz09zrq0zcc_1760091874.png",
-      "links": null
-    },
-    "published_at": "2026-02-09T15:05:20.000000Z",
-    "open": true,
-    "status": "published",
-    "meta": {
-      "languages": [
-        {
-          "name": "javascript",
-          "type": "preferred"
-        }
-      ],
-      "frameworks": [
-        {
-          "name": "vue",
-          "type": "preferred"
-        }
-      ],
-      "meta_frameworks": []
-    },
-    "notes": null,
-    "tracked": null
-  },
-  {
-    "type": "post",
-    "id": "01kh1fece3rjsd324qhty6ayv7",
-    "slug": "maasil-inc-developpeur-front-end-vue-js-twig-2",
-    "title": "Développeur Front-End (Vue.js. / Twig)",
-    "description": "<p>Lentreprise :</p>\n<p>MaaSil Inc est une entreprise dexternalisation de services vers Madagascar. Nous proposons à nos clients français, suisses ou belges, des consultants situés à Madagascar. Nous proposons tous types de profils. Notre objectif est de proposer les meilleurs de Madagascar pour nos clients. Et de garantir des conditions salariales qui soient optimales pour nos équipes.</p>\n<p>Missions et compétences :</p>\n<ul>\n<li>Développer et maintenir les interfaces front-end de lapplication.</li>\n<li>Travailler avec <strong>JavaScript</strong>, <strong>Twig</strong> et <strong>Vue.js</strong>.</li>\n<li>Intégrer les API back-end et assurer une bonne communication front/back.</li>\n<li>Maintenir la lisibilité, la cohérence et la performance du code front-end.</li>\n<li>Comprendre et évoluer dans une application existante de grande taille.</li>\n<li>Collaborer avec les développeurs back-end et les équipes produit.</li>\n<li>Expérience solide en <strong>JavaScript</strong>.</li>\n<li>Bonne maîtrise de <strong>Twig</strong> et <strong>Vue.js</strong>.</li>\n<li>Habitude de travailler sur des <strong>applications vastes et complexes</strong>.</li>\n<li>Capacité à analyser un code existant et à sy intégrer rapidement.</li>\n<li>Sens du détail sur lergonomie, la maintenabilité et la performance.</li>\n</ul>\n<p>Rémunération / Avantages :</p>\n<ul>\n<li>Salaire à négocier selon profil – MaaSil Inc peut se permettre doffrir les meilleurs salaires au vu de la qualité des missions délégués par nos clients</li>\n<li>Commissions supplémentaires avec Objectif qualitatif et quantitatif</li>\n<li>+10% de salaire / 6 mois</li>\n<li>Mutuelle Complémentaire</li>\n<li>Retraite Complémentaire</li>\n<li>Navette retour le soir</li>\n</ul>\n<p>Profil:</p>\n<ul>\n<li><strong>Maîtrise PARFAITE du Français</strong> (lu, écrit, parlé)</li>\n<li><strong>Maîtrise de langlais technique est indispensable</strong></li>\n<li>Bac+5 en informatique</li>\n<li><strong>Autonomie EXIGÉE</strong> (Vous serez en relation direct avec notre client, professionnalisme exigé)</li>\n<li><strong>Polyvalence</strong></li>\n<li><strong>Force de proposition</strong></li>\n<li>Esprit analytique</li>\n</ul>\n<p>Horaire de travail (heures françaises) : 08-17h OU 10-19h. Les horaires pourraient évoluer selon les besoins du client mais le nombre dheures travaillées restent inchangé = 40h/semaine</p>",
-    "locations": [
-      {
-        "city": "Antananarivo",
-        "state": "",
-        "country": "MG"
-      }
-    ],
-    "work_type": [
-      "full-time"
-    ],
-    "work_place": [
-      "remote"
-    ],
-    "seniority": [
-      "mid-level",
-      "senior"
-    ],
-    "salary": null,
-    "source_url": "https://www.careers-page.com/maasil-inc/job/X966X4XY",
-    "apply_url": "https://www.careers-page.com/maasil-inc/job/X966X4XY/apply",
-    "organization": {
-      "id": "01k76td8mnct2z8hz09zrq0zcc",
-      "name": "MaaSIl Inc",
-      "domain": null,
-      "logo": "01k76td8mnct2z8hz09zrq0zcc_1760091874.png",
-      "links": null
-    },
-    "published_at": "2026-02-09T15:05:20.000000Z",
-    "open": true,
-    "status": "published",
-    "meta": {
-      "languages": [
-        {
-          "name": "javascript",
           "type": "preferred"
         }
       ],
@@ -3184,671 +3850,6 @@
       "languages": [
         {
           "name": "javascript",
-          "type": "preferred"
-        }
-      ],
-      "frameworks": [
-        {
-          "name": "vue",
-          "type": "preferred"
-        }
-      ],
-      "meta_frameworks": []
-    },
-    "notes": null,
-    "tracked": null
-  },
-  {
-    "type": "post",
-    "id": "01kjzfp5j8dq7yjmfzbefd6d7k",
-    "slug": "intogreat-solutions-philippines-c-vb-net-developer-wfh",
-    "title": "C# / VB.NET Developer - WFH",
-    "locations": null,
-    "work_type": [
-      "full-time"
-    ],
-    "work_place": [
-      "remote"
-    ],
-    "seniority": [
-      "junior",
-      "mid-level"
-    ],
-    "salary": null,
-    "published_at": "2026-02-06T00:00:00.000000Z",
-    "open": false,
-    "status": "published",
-    "meta": {
-      "frameworks": [
-        {
-          "name": "vue",
-          "type": "preferred"
-        }
-      ],
-      "meta_frameworks": []
-    },
-    "notes": null,
-    "tracked": null
-  },
-  {
-    "type": "post",
-    "id": "01kgq67dkw4q0hsczgpr112t65",
-    "slug": "reo-digital-vuejs-developer",
-    "title": "VueJS Developer",
-    "locations": [
-      {
-        "city": "",
-        "state": "",
-        "country": "GB"
-      }
-    ],
-    "work_type": [
-      "full-time"
-    ],
-    "work_place": [
-      "remote"
-    ],
-    "seniority": [
-      "mid-level",
-      "senior"
-    ],
-    "salary": null,
-    "published_at": "2026-02-05T15:12:55.000000Z",
-    "open": false,
-    "status": "published",
-    "meta": {
-      "languages": [
-        {
-          "name": "javascript",
-          "type": "preferred"
-        },
-        {
-          "name": "typescript",
-          "type": "preferred"
-        }
-      ],
-      "frameworks": [
-        {
-          "name": "vue",
-          "type": "preferred"
-        }
-      ],
-      "meta_frameworks": []
-    },
-    "notes": null,
-    "tracked": null
-  },
-  {
-    "type": "post",
-    "id": "01kgkyvjbgffcpzjsqbxpdz379",
-    "slug": "journi-limited-fullstack-developer-vue-net-fully-remote-uk-europe",
-    "title": "Fullstack Developer (Vue/.Net) - Fully Remote (UK/Europe)",
-    "description": "<p><strong>About</strong></p>\n<p>Journi is a London-based technology consultancy where we partner with businesses to support their technology needs from strategy through delivery. We provide bespoke software development, digital transformation consulting, team augmentation, and ongoing technical support, helping clients build custom products and scale their capabilities quickly with experienced professionals.</p>\n<p><strong>The Role</strong></p>\n<p>As a Full Stack Engineer with expertise in .NET and Vue, you'll take on a hands-on role in building web applications while working vertically in both the frontend and the backend. Your responsibilities will involve designing, developing, and fine-tuning web applications, using .NET 6+, MediaTR, EF.Core and VueJS 2/3 to create engaging and user-friendly interfaces. You'll work closely with the client's team to deliver a solution that meets their requirements.</p>\n<p><strong>Responsibilities</strong></p>\n<ul>\n<li>Develop and maintain web applications using .Net and VueJS technologies.</li>\n<li>Collaborate with the development team to design efficient and scalable solutions.</li>\n<li>Participate in code reviews and unit testing.</li>\n<li>Research and propose innovative technological solutions.</li>\n</ul>\n<p><strong>Requirements</strong></p>\n<ul>\n<li>Demonstrable experience in web development using .Net 6+ and Vue 2/3.</li>\n<li>Solid knowledge of technologies related to web development such as Web API, CQS, MediaTR and event-based architectures</li>\n<li>Solid knowledge of HTML, CSS, and Typescript.</li>\n<li>Ability to work autonomously and in a team.</li>\n</ul>\n<p><strong>What we offer</strong></p>\n<ul>\n<li>Fully flexible &amp; remote first working environment</li>\n<li>Competitive Pay</li>\n<li>12 months contract (as a contractor)</li>\n</ul>",
-    "locations": [],
-    "work_type": [
-      "contract"
-    ],
-    "work_place": [
-      "remote"
-    ],
-    "seniority": [
-      "mid-level",
-      "senior"
-    ],
-    "salary": null,
-    "source_url": "https://www.careers-page.com/journi-limited/job/7X44X3WX",
-    "apply_url": "https://www.careers-page.com/journi-limited/job/7X44X3WX/apply",
-    "organization": {
-      "id": "01k76te26ce46tndhjgcey47y5",
-      "name": "Journi Limited",
-      "domain": null,
-      "logo": "01k76te26ce46tndhjgcey47y5_1760091900.png",
-      "links": null
-    },
-    "published_at": "2026-02-04T09:09:08.000000Z",
-    "open": true,
-    "status": "published",
-    "meta": {
-      "languages": [
-        {
-          "name": "typescript",
-          "type": "preferred"
-        }
-      ],
-      "frameworks": [
-        {
-          "name": "vue",
-          "type": "preferred"
-        }
-      ],
-      "meta_frameworks": []
-    },
-    "notes": null,
-    "tracked": null
-  },
-  {
-    "type": "post",
-    "id": "01kgmy44hwvf5e7yvnmxrasjmz",
-    "slug": "bah-software-engineer",
-    "title": "Software Engineer",
-    "locations": [
-      {
-        "city": "Montgomery",
-        "state": "AL",
-        "country": "US"
-      }
-    ],
-    "work_type": [
-      "full-time"
-    ],
-    "work_place": [
-      "remote",
-      "on-site",
-      "hybrid"
-    ],
-    "seniority": [
-      "mid-level"
-    ],
-    "salary": {
-      "currency": "USD",
-      "min": 52900,
-      "max": 108000,
-      "period": "year"
-    },
-    "published_at": "2026-02-04T00:00:00.000000Z",
-    "open": false,
-    "status": "published",
-    "meta": {
-      "languages": [
-        {
-          "name": "javascript",
-          "type": "preferred"
-        }
-      ],
-      "frameworks": [
-        {
-          "name": "vue",
-          "type": "preferred"
-        }
-      ],
-      "meta_frameworks": []
-    },
-    "notes": null,
-    "tracked": null
-  },
-  {
-    "type": "post",
-    "id": "01kgmq8d6cnr512bbhek8643k9",
-    "slug": "zuehlke-full-stack-engineer-focus-on-python",
-    "title": "Full Stack Engineer (focus on Python)",
-    "description": "<p>Founded in Switzerland in 1968, Zühlke is owned by its partners and located across Europe and Asia. We are a global transformation partner, with engineering and innovation in our DNA. We're trusted to help clients envision and build their businesses for the future – to run smarter today while adapting for tomorrow’s markets, customers, and communities. Our multidisciplinary teams specialise in tech strategy and business innovation, digital solutions and applications, and device and systems engineering. We excel in complex, regulated spaces including health and finance, connecting strategy, tech implementation, and operational services to help clients become more effective, resilient businesses.</p>\n<p>If you share our values and want to do the best work, for the right reasons, we can offer you the chance to do it on a global scale and play a real role in shaping our exciting journey.</p>\n<p><strong>The role</strong></p>\n<p>The team for this role is responsible for the funeral care product that is constantly evolving. An interesting mix of technologies is being used, such as Vue and Python. The most exciting part of the work is the collaboration not only with the engineers but with the other expertise, such as business, design and content creation while delivering a high-quality solution.</p>\n<p>We are looking for a Python engineer who has experience in working on the Frontend with either of the following: Vue/React/Angular.</p>\n<p>As a Python engineer you will be responsible for the product backlog focusing on both Backend and Frontend, as per roadmap requirements.</p>\n<p><strong>How you will make impact</strong></p>\n<ul>\n<li>Solving complex technical problems</li>\n<li>Directly communicating with customers and guiding them towards success</li>\n<li>Working closely with your local and remote colleagues in agile set-up</li>\n<li>Creating high-quality solutions while adapting to customer requirements</li>\n<li>Being curious, open-minded, and standing by your ideas</li>\n</ul>\n<p><strong>What's important to us</strong></p>\n<ul>\n<li>You have a technical-related degree and/or equivalent professional qualification</li>\n<li>At least 3 years of professional experience</li>\n<li>You are communicative and have an open-minded personality</li>\n<li>You are fluent in English (both written and oral)</li>\n<li>Strong proficiency in Backend development</li>\n<li>Experience in Python</li>\n<li>Frontend expereince - Vue.js preferred but other frontend experience considered React/Angular</li>\n<li>Willingness to work on both frontend and backend in the product team through PLCM</li>\n<li>Ability to apply architectural and design patterns with a focus on quality, readability and maintainability</li>\n<li>Experience with automated testing frameworks</li>\n<li>Working experience with AWS or other cloud providers</li>\n<li>Previous experience working in pairs and/or ensembles and with TDD</li>\n<li>Working experience with Contentful or other content management systems</li>\n<li>Experience with configuring and using CI/CD tools – e.g GitLab and Jenkins</li>\n<li>Working in an agile team, with a good understanding of the concepts, practical experience</li>\n</ul>\n<p><strong>What we offer</strong></p>\n<ul>\n<li><strong>Work life blend:</strong> we offer a safe &amp; healthy workplace, with flexible working hours and the possibility to work from home</li>\n<li><strong>Profit share scheme:</strong> In addition to your annual salary, you may receive a profit share defined by the company’s success in the previous year</li>\n<li><strong>Global and Diverse Zühlke community:</strong> witness how colleagues from all our 17 offices across the globe come together to create a unique, positive and inclusive work culture, learning from one another at annual team camps, and celebrating year-end parties and other local festivities.</li>\n<li><strong>Committed to development:</strong> we are committed to the growth of our people and are investing in your development. We’re empowering you to build the skills you need to make a positive impact, both personally and for our clients, today and in the future.</li>\n</ul>\n<p>For benefits that we offer please go to this <a href=\"http://www.zuehlke.com/en/careers/locations/serbia\">link</a> for Serbia and this <a href=\"http://www.zuehlke.com/en/careers/locations/portugal\">link</a> for Portugal.</p>\n<p>If you feel you don't meet all the requirements, we are still happy to get to know you, learn more about your ambitions and ideas and look forward to receiving your application!</p>\n<p>We welcome people from all backgrounds, regardless of their gender, personality, national origin, race, religion, colour, sexual orientation, gender identity, age, marital status, disability or veteran status.</p>",
-    "locations": [
-      {
-        "city": "Belgrade",
-        "state": "",
-        "country": "RS"
-      }
-    ],
-    "work_type": [
-      "full-time"
-    ],
-    "work_place": [
-      "remote",
-      "on-site"
-    ],
-    "seniority": [
-      "mid-level",
-      "senior"
-    ],
-    "salary": null,
-    "source_url": "https://zuehlke.wd3.myworkdayjobs.com/Zuhlke-Careers/job/Belgrade/Full-Stack-Engineer--focus-on-Python-_JR100701-1",
-    "apply_url": null,
-    "organization": {
-      "id": "01k8ka80sg8ajy5szrmc1mnjjq",
-      "name": "zuehlke",
-      "domain": "zuehlke.com",
-      "logo": "01k8ka80sg8ajy5szrmc1mnjjq_1770398447.jpg",
-      "links": null
-    },
-    "published_at": "2026-02-04T00:00:00.000000Z",
-    "open": true,
-    "status": "published",
-    "meta": {
-      "languages": [],
-      "frameworks": [
-        {
-          "name": "vue",
-          "type": "preferred"
-        },
-        {
-          "name": "react",
-          "type": "optional"
-        },
-        {
-          "name": "angular",
-          "type": "optional"
-        }
-      ],
-      "meta_frameworks": []
-    },
-    "notes": null,
-    "tracked": null
-  },
-  {
-    "type": "post",
-    "id": "01kgj7ydgezx6t0ezed56jkh21",
-    "slug": "thyme-care-software-engineer",
-    "title": "Software Engineer",
-    "description": "<p><strong>OUR MISSION</strong></p>\n<p>We exist to create a more connected, compassionate, and confident experience for people with cancer and those who care for them. We make it easier to get answers, access high-quality care quickly, and feel supported throughout treatment and beyond.</p>\n<p>Today, Thyme Care is a market-leading value-based oncology care enabler, partnering with national and regional health plans, providers, and employers to deliver better outcomes and lower costs for thousands of people across the country. Our model combines high-touch human support with powerful technology and AI to bring together everyone involved in a person’s cancer journey: caregivers, oncologists, health plans, and employers.</p>\n<p>As a tech-native organization, we believe technology should strengthen the human connection at the center of care. Through data science, automation, and AI, we simplify complexity, improve collaboration, and help care teams focus on what matters most: supporting people through cancer.</p>\n<p>Looking ahead, our vision is bold: to become a household name in cancer care, where every person diagnosed asks for Thyme Care by name. If you’re inspired to make cancer care more human and to help reimagine what’s possible, we’d love to meet you. Together, we can build a future where every person with cancer feels truly cared for, in every moment that matters.</p>\n<p><strong>WHAT YOU’LL DO</strong></p>\n<p>As a Software Engineer working on <a href=\"https://www.thymecare.com/thymebox\">Thyme Box</a>, you will be a key part of our ever-growing technical team developing our proprietary internal care management platform. Thyme Box is the primary tool that enables 600+ Care Team members to deliver clinical and non-clinical navigation services to members every day.</p>\n<p>Additionally, you will:</p>\n<ul>\n<li>\n<p>Connect with and add to our collaborative, agile team and quickly develop a deep understanding of our tech stack.</p>\n</li>\n<li>\n<p>Wrap your head around Thyme Care’s business model and success metrics, and develop a deep empathy for the challenges our clinical care team faces in supporting members.</p>\n</li>\n<li>\n<p>Independently plan, build, and deliver multiple features within the Thyme Box product, from concept through launch and iteration.</p>\n</li>\n<li>\n<p>Partner closely with Product to scope experiments and shape new product ideas that improve outcomes for our members.</p>\n</li>\n<li>\n<p>Play a key role in building the technology that enables our care team to surface ancillary benefit programs and services more efficiently.</p>\n</li>\n<li>\n<p>Help create an intuitive user interface that allows our care team to triage patient touch points, from hospitalizations to changes in chemotherapy.</p>\n</li>\n<li>\n<p>Integrate and surface data from multiple sources to give the care team timely, actionable insights into their patients’ needs.</p>\n</li>\n</ul>\n<p><strong>WHAT YOU’VE DONE</strong></p>\n<ul>\n<li>You have 3+ years of experience building, shipping, and supporting software in production.</li>\n<li>You’ve worked in fast-paced, early stage environments. You’re comfortable iterating quickly to make decisions and deliver value to users.</li>\n<li>You have strong experience with web development. You’ve built single-page applications in stacks similar to ours: Vue.js/TypeScript, FastAPI/Python, and Postgres.</li>\n<li>You’ve taken ownership of features from idea to production, including design, implementation, testing, and ongoing improvements.</li>\n<li>You’ve collaborated closely with engineers, product, and cross-functional partners, and can clearly communicate technical tradeoffs and solutions to both technical and non-technical stakeholders.</li>\n</ul>\n<p>Nice to have, but not required:</p>\n<ul>\n<li>You’ve used and contributed to AI tooling that supports developer productivity, code quality, and engineering best practices.</li>\n<li>You have prior experience working in healthcare or health tech.</li>\n</ul>\n<p><strong>WHAT LEADS TO SUCCESS</strong></p>\n<p><strong>Curiosity.</strong> You have a drive to understand how things work and love sharing that knowledge with others. (Find out more about our engineering team’s culture of learning <a href=\"https://eng.thymecare.com/blog/culture-of-learning\">here</a>!)<br />\n<strong>Comfort with ambiguity.</strong>  You feel excited about working in fast-paced environments, and ambitious startups. You know to expect ambiguity and ever-changing priorities, and feel up for the challenge.<br />\n<strong>Collaboration</strong>. You know that building great products requires a great team. You enjoy working with and learning from your colleagues, both technical and non-technical alike.<br />\n<strong>People-first.</strong> Thyme Care’s mission and members matter to you, deeply.<br />\n<strong>Commitment to inclusivity.</strong> You care deeply about building an inclusive culture at Thyme Care. You recognize a history of inequity in tech and believe that we must build a team that reflects the diversity of the population we serve.</p>\n<p><strong>OUR VALUES</strong></p>\n<p><em>At Thyme Care, our core values guide us in everything we do: Act with our members in mind, Move with purpose, and Seek diverse perspectives. They anchor our business decisions, including how we grow, the products we make, and the paths we choose—or don’t choose.</em></p>\n<p><em>Our salary ranges are based on paying competitively for our size and industry, and are one part of the total compensation package that also includes equity, benefits, and other opportunities at Thyme Care. Individual pay decisions are based on several factors, including qualifications, experience level, skillset, and balancing internal equity relative to other Thyme Care employees. The base salary for this role is $153,000-$170,000. The salary range could be lower or higher than this if the role is hired at another level.</em></p>\n<p><em>We recognize a history of inequality in healthcare. We’re here to challenge the status quo and create a culture of inclusion through the care we give and the company we build. We embrace and celebrate a diversity of perspectives in reflection of our members and the members we serve. We are an equal-opportunity employer.</em></p>\n<p><em>Be cautious of</em> <a href=\"https://www.thymecare.com/fraudulent-job-offers\"><em>recruitment fraud</em></a><em>, and always confirm that communications are coming from an official Thyme Care email.</em></p>",
-    "locations": [
-      {
-        "city": "",
-        "state": "",
-        "country": ""
-      },
-      {
-        "city": "Nashville",
-        "state": "TN",
-        "country": "US"
-      }
-    ],
-    "work_type": [
-      "full-time"
-    ],
-    "work_place": [
-      "remote",
-      "on-site"
-    ],
-    "seniority": [
-      "mid-level"
-    ],
-    "salary": {
-      "currency": "USD",
-      "min": 153000,
-      "max": 170000,
-      "period": "year"
-    },
-    "source_url": "https://app.careerpuck.com/job-board/thymecare/job/5781840004?gh_jid=5781840004",
-    "apply_url": null,
-    "organization": {
-      "id": "01k76t8vv2vhp5m5bk9xebayhr",
-      "name": "Thyme Care",
-      "domain": "thymecare.com",
-      "logo": "01k76t8vv2vhp5m5bk9xebayhr_1760091729.jpg",
-      "links": {
-        "x": "https://x.com/thymecares",
-        "facebook": "https://www.facebook.com/thymecare/",
-        "linkedin": "https://www.linkedin.com/company/thymecare"
-      }
-    },
-    "published_at": "2026-02-03T12:05:39.000000Z",
-    "open": true,
-    "status": "published",
-    "meta": {
-      "languages": [
-        {
-          "name": "typescript",
-          "type": "preferred"
-        }
-      ],
-      "frameworks": [
-        {
-          "name": "vue",
-          "type": "preferred"
-        }
-      ],
-      "meta_frameworks": []
-    },
-    "notes": null,
-    "tracked": null
-  },
-  {
-    "type": "post",
-    "id": "01khef9f2hw14x62p5fdbg8fys",
-    "slug": "amentis-solutions-gmbh-fullstack-developer-m-w-d",
-    "title": "Fullstack Developer (m/w/d)",
-    "locations": [],
-    "work_type": [
-      "full-time"
-    ],
-    "work_place": [
-      "remote"
-    ],
-    "seniority": [
-      "junior",
-      "mid-level"
-    ],
-    "salary": null,
-    "published_at": "2026-02-03T07:54:51.000000Z",
-    "open": false,
-    "status": "published",
-    "meta": {
-      "languages": [
-        {
-          "name": "typescript",
-          "type": "preferred"
-        }
-      ],
-      "frameworks": [
-        {
-          "name": "vue",
-          "type": "preferred"
-        }
-      ],
-      "meta_frameworks": []
-    },
-    "notes": null,
-    "tracked": null
-  },
-  {
-    "type": "post",
-    "id": "01kgfsanxftxsvcahtar5ybk03",
-    "slug": "flink-senior-software-engineer-web-m-f-d",
-    "title": "Senior Software Engineer - Web (m/f/d) ",
-    "locations": [
-      {
-        "city": "Berlin",
-        "state": "Berlin",
-        "country": "DE"
-      }
-    ],
-    "work_type": [
-      "full-time"
-    ],
-    "work_place": [
-      "remote"
-    ],
-    "seniority": [
-      "mid-level",
-      "senior"
-    ],
-    "salary": null,
-    "published_at": "2026-02-02T17:32:03.000000Z",
-    "open": false,
-    "status": "published",
-    "meta": {
-      "languages": [
-        {
-          "name": "typescript",
-          "type": "preferred"
-        },
-        {
-          "name": "javascript",
-          "type": "preferred"
-        }
-      ],
-      "frameworks": [
-        {
-          "name": "vue",
-          "type": "preferred"
-        },
-        {
-          "name": "react",
-          "type": "optional"
-        }
-      ],
-      "meta_frameworks": [
-        {
-          "name": "nuxt",
-          "type": "preferred"
-        },
-        {
-          "name": "next",
-          "type": "optional"
-        }
-      ]
-    },
-    "notes": null,
-    "tracked": null
-  },
-  {
-    "type": "post",
-    "id": "01kgf85dkxkbxapm1y12frkr8n",
-    "slug": "critalog-gmbh-fullstack-entwickler-in",
-    "title": "Fullstack - Entwickler:in",
-    "locations": [],
-    "work_type": [
-      "full-time"
-    ],
-    "work_place": [
-      "hybrid",
-      "remote"
-    ],
-    "seniority": [
-      "mid-level"
-    ],
-    "salary": null,
-    "published_at": "2026-02-02T12:31:24.000000Z",
-    "open": false,
-    "status": "published",
-    "meta": {
-      "languages": [
-        {
-          "name": "typescript",
-          "type": "preferred"
-        }
-      ],
-      "frameworks": [
-        {
-          "name": "vue",
-          "type": "preferred"
-        }
-      ],
-      "meta_frameworks": [
-        {
-          "name": "nuxt",
-          "type": "preferred"
-        }
-      ]
-    },
-    "notes": null,
-    "tracked": null
-  },
-  {
-    "type": "post",
-    "id": "01kgf59s9s1nba4c01exsqn00w",
-    "slug": "highlevel-software-development-engineer-iii-location",
-    "title": "Software Development Engineer III - Location",
-    "locations": [],
-    "work_type": [
-      "full-time"
-    ],
-    "work_place": [
-      "remote"
-    ],
-    "seniority": [
-      "mid-level",
-      "senior"
-    ],
-    "salary": null,
-    "published_at": "2026-02-02T11:36:34.000000Z",
-    "open": false,
-    "status": "published",
-    "meta": {
-      "languages": [],
-      "frameworks": [
-        {
-          "name": "vue",
-          "type": "preferred"
-        },
-        {
-          "name": "react",
-          "type": "optional"
-        },
-        {
-          "name": "angular",
-          "type": "optional"
-        }
-      ],
-      "meta_frameworks": []
-    },
-    "notes": null,
-    "tracked": null
-  },
-  {
-    "type": "post",
-    "id": "01kgetdypjnwhz8wxq8x5zgbnj",
-    "slug": "gecko-mbh-vertriebsberater-digitalisierung-prozessberatung-m-w-d",
-    "title": "Vertriebsberater Digitalisierung & Prozessberatung (m/w/d)",
-    "locations": [
-      {
-        "city": "Rostock",
-        "state": "Mecklenburg-Vorpommern",
-        "country": "DE"
-      }
-    ],
-    "work_type": [
-      "full-time"
-    ],
-    "work_place": [
-      "hybrid",
-      "remote",
-      "on-site"
-    ],
-    "seniority": [
-      "mid-level",
-      "senior"
-    ],
-    "salary": null,
-    "published_at": "2026-02-02T08:57:21.000000Z",
-    "open": false,
-    "status": "published",
-    "meta": {
-      "languages": [],
-      "frameworks": [
-        {
-          "name": "vue",
-          "type": "preferred"
-        }
-      ],
-      "meta_frameworks": []
-    },
-    "notes": null,
-    "tracked": null
-  },
-  {
-    "type": "post",
-    "id": "01kg7a3gy861dd486qfn0e0tzk",
-    "slug": "white-cloak-technologies-fullstack-software-engineer-laravel-vue-js",
-    "title": "Fullstack Software Engineer - Laravel & Vue.js",
-    "locations": [
-      {
-        "city": "Pasig City",
-        "state": "Metro Manila",
-        "country": "PH"
-      }
-    ],
-    "work_type": [
-      "part-time"
-    ],
-    "work_place": [
-      "remote"
-    ],
-    "seniority": [
-      "junior",
-      "mid-level",
-      "senior"
-    ],
-    "salary": null,
-    "published_at": "2026-01-30T11:15:09.000000Z",
-    "open": false,
-    "status": "published",
-    "meta": {
-      "languages": [
-        {
-          "name": "javascript",
-          "type": "preferred"
-        }
-      ],
-      "frameworks": [
-        {
-          "name": "vue",
-          "type": "preferred"
-        }
-      ],
-      "meta_frameworks": []
-    },
-    "notes": null,
-    "tracked": null
-  },
-  {
-    "type": "post",
-    "id": "01kjv6ngxq8kth4gm9jfjkqz38",
-    "slug": "profitroom-fullstack-developer",
-    "title": "Fullstack Developer",
-    "locations": [
-      {
-        "city": null,
-        "state": null,
-        "country": "PL"
-      }
-    ],
-    "work_type": [
-      "full-time",
-      "contract"
-    ],
-    "work_place": [
-      "remote"
-    ],
-    "seniority": [
-      "mid-level"
-    ],
-    "salary": {
-      "currency": "PLN",
-      "min": 12000,
-      "max": 19300,
-      "period": "month"
-    },
-    "published_at": "2026-01-30T00:00:00.000000Z",
-    "open": false,
-    "status": "published",
-    "meta": {
-      "frameworks": [
-        {
-          "name": "vue",
-          "type": "preferred"
-        }
-      ],
-      "meta_frameworks": []
-    },
-    "notes": null,
-    "tracked": null
-  },
-  {
-    "type": "post",
-    "id": "01kg520g8abesswjpndctfqyg1",
-    "slug": "tunga-bv-5-sm-automation-devops-engineer",
-    "title": "5/SM - Automation & DevOps Engineer",
-    "locations": [
-      {
-        "city": "",
-        "state": "Central",
-        "country": "UG"
-      }
-    ],
-    "work_type": [
-      "full-time",
-      "contract"
-    ],
-    "work_place": [
-      "remote"
-    ],
-    "seniority": [
-      "mid-level",
-      "senior"
-    ],
-    "salary": null,
-    "published_at": "2026-01-29T13:38:15.000000Z",
-    "open": false,
-    "status": "published",
-    "meta": {
-      "languages": [
-        {
-          "name": "javascript",
-          "type": "preferred"
-        },
-        {
-          "name": "typescript",
           "type": "preferred"
         }
       ],

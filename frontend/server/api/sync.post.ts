@@ -1,4 +1,9 @@
-export default defineEventHandler(async () => {
+export default defineEventHandler(async (event) => {
   const config = useRuntimeConfig();
-  return await $fetch(`${config.apiUrl}/jobs/sync`, { method: "POST" });
+  const query = getQuery(event);
+  const params = new URLSearchParams();
+  if (query.q) params.set("q", String(query.q));
+  return await $fetch(`${config.apiUrl}/jobs/sync?${params}`, {
+    method: "POST",
+  });
 });
