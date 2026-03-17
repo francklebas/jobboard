@@ -2,7 +2,7 @@
   <div class="max-w-4xl mx-auto p-6">
     <header class="mb-6">
       <h1 class="text-3xl font-bold mb-2">JobBoard Stockholm</h1>
-      <div class="text-sm text-gray-600">
+      <div class="text-sm" style="color: var(--text-dim)">
         <span v-if="data?.last_sync">
           Last sync: {{ new Date(data.last_sync).toLocaleString() }}
         </span>
@@ -16,10 +16,12 @@
           type="text"
           placeholder="Search jobs (React, Vue, TypeScript...)"
           class="border rounded px-3 py-2"
+          style="background: var(--surface); border-color: var(--border); color: var(--text)"
           @keyup.enter="sync"
         />
         <button 
-          class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 disabled:bg-gray-400" 
+          class="px-4 py-2 rounded text-white disabled:bg-gray-400" 
+          style="background: var(--accent)"
           :disabled="syncing" 
           @click="sync"
         >
@@ -27,14 +29,15 @@
         </button>
       </div>
 
-      <select v-model="source" @change="refresh()" class="border rounded px-3 py-2">
+      <select v-model="source" @change="refresh()" class="border rounded px-3 py-2" style="background: var(--surface); border-color: var(--border); color: var(--text)">
         <option value="">All sources</option>
         <option value="indeed">Indeed</option>
         <option value="linkedin">LinkedIn</option>
       </select>
 
       <button 
-        class="bg-gray-600 text-white px-3 py-2 rounded hover:bg-gray-700 disabled:bg-gray-400 disabled:cursor-not-allowed" 
+        class="px-3 py-2 rounded text-white disabled:bg-gray-400 disabled:cursor-not-allowed" 
+        style="background: var(--text-dim)"
         :disabled="syncing" 
         @click="sync"
       >
@@ -43,11 +46,12 @@
     </div>
 
     <div class="flex flex-wrap gap-2 items-center mb-5">
-      <span class="text-sm text-gray-600">Quick Search:</span>
+      <span class="text-sm" style="color: var(--text-dim)">Quick Search:</span>
       <button 
         v-for="term in ['React developer', 'Vue developer', 'TypeScript developer', 'Frontend developer']"
         :key="term"
-        class="bg-gray-200 border-none px-2 py-1 rounded-full text-sm cursor-pointer hover:bg-gray-300"
+        class="border-none px-2 py-1 rounded-full text-sm cursor-pointer"
+        style="background: var(--tag-bg); color: var(--tag-text)"
         @click="quickSearch(term)"
       >
         {{ term.split(' ')[0] }}
@@ -55,19 +59,20 @@
     </div>
 
     <div class="flex flex-wrap gap-3 items-center mb-6">
-      <span class="text-sm text-gray-600">Filter by:</span>
+      <span class="text-sm" style="color: var(--text-dim)">Filter by:</span>
       <button
         v-for="f in ['all', 'new', 'viewed', 'applied', 'rejected']"
         :key="f"
-        class="bg-gray-100 border border-gray-300 px-3 py-2 rounded cursor-pointer hover:bg-gray-200"
-        :class="{ 'bg-blue-600 text-white border-blue-600': statusFilter === f }"
+        class="border px-3 py-2 rounded cursor-pointer"
+        style="background: var(--surface); border-color: var(--border); color: var(--text)"
+        :class="{ '!bg-[var(--accent)] !text-white !border-[var(--accent)]': statusFilter === f }"
         @click="statusFilter = f"
       >
         {{ f.charAt(0).toUpperCase() + f.slice(1) }}
       </button>
     </div>
 
-    <p class="text-sm text-gray-600 mb-4">
+    <p class="text-sm mb-4" style="color: var(--text-dim)">
       {{ displayedJobs.length }} of {{ data?.count ?? 0 }} jobs shown
     </p>
 
@@ -77,29 +82,31 @@
         :key="job.url"
         class="border rounded-lg p-4 shadow-sm"
         :class="{
-          'bg-gray-100': viewedJobs.has(job.url),
-          'bg-green-50': appliedJobs.has(job.url),
-          'opacity-60 bg-gray-200': rejectedJobs.has(job.url),
+          '!bg-[var(--surface)]': viewedJobs.has(job.url),
+          '!bg-green-50 dark:!bg-green-900': appliedJobs.has(job.url),
+          'opacity-60 !bg-gray-200 dark:!bg-gray-800': rejectedJobs.has(job.url),
         }"
+        style="background: var(--surface); border-color: var(--border)"
       >
         <h3 class="text-xl font-semibold mb-2">
           <a
             :href="job.url"
             target="_blank"
             rel="noopener"
-            class="text-blue-600 hover:underline"
+            class="hover:underline"
+            style="color: var(--accent)"
             :class="{ 'line-through': rejectedJobs.has(job.url) }"
             @click.prevent="viewJob(job)"
             >{{ job.title }}</a
           >
         </h3>
-        <div class="flex flex-wrap gap-3 text-sm text-gray-600 mb-2">
+        <div class="flex flex-wrap gap-3 text-sm mb-2" style="color: var(--text-dim)">
           <span>{{ job.company }}</span>
           <span>{{ job.location }}</span>
-          <span class="bg-gray-200 px-2 py-0.5 rounded text-xs">{{ job.source }}</span>
+          <span class="px-2 py-0.5 rounded text-xs" style="background: var(--tag-bg); color: var(--tag-text)">{{ job.source }}</span>
           <span v-if="job.date_posted">{{ job.date_posted }}</span>
         </div>
-        <p class="text-gray-700 mb-3" :class="{ 'line-through': rejectedJobs.has(job.url) }">
+        <p class="mb-3" style="color: var(--text-dim)" :class="{ 'line-through': rejectedJobs.has(job.url) }">
           {{ job.description }}
         </p>
         <div class="flex gap-2 mt-2">
@@ -108,12 +115,15 @@
             target="_blank"
             rel="noopener"
             @click="applyToJob(job)"
-            class="bg-green-600 text-white px-3 py-1.5 rounded hover:bg-green-700 text-center no-underline"
+            class="px-3 py-1.5 rounded text-center no-underline text-white"
+            :class="{ '!bg-green-700': appliedJobs.has(job.url) }"
+            style="background: #22c55e"
           >
             {{ appliedJobs.has(job.url) ? "Applied" : "Apply" }}
           </a>
           <button
-            class="bg-red-600 text-white px-3 py-1.5 rounded hover:bg-red-700 disabled:bg-gray-400 disabled:cursor-not-allowed"
+            class="px-3 py-1.5 rounded text-white disabled:bg-gray-400 disabled:cursor-not-allowed"
+            style="background: #ef4444"
             @click="rejectJob(job)"
             :disabled="rejectedJobs.has(job.url)"
           >
@@ -122,7 +132,7 @@
         </div>
       </div>
 
-      <div v-if="displayedJobs.length === 0" class="text-center py-8 text-gray-500">
+      <div v-if="displayedJobs.length === 0" class="text-center py-8" style="color: var(--text-dim)">
         No jobs found. Try syncing or adjusting your search.
       </div>
     </div>
@@ -281,21 +291,21 @@ function debouncedRefresh() {
 async function sync() {
   syncing.value = true;
   try {
-    const syncResponse = await $fetch<{ started_at: number }>("/api/sync", {
+    await $fetch("/api/sync", {
       method: "POST",
       query: { q: search.value },
     });
 
-    const startTime = syncResponse.started_at;
+    const startTime = Date.now();
     const pollInterval = 1000;
     const timeout = 60000;
 
-    while (Date.now() / 1000 - startTime < timeout) {
+    while (Date.now() - startTime < timeout) {
       await new Promise(r => setTimeout(r, pollInterval));
       
       const status = await $fetch<{ last_sync: string | null }>("/api/sync/status");
       if (status.last_sync) {
-        const syncTime = new Date(status.last_sync).getTime() / 1000;
+        const syncTime = new Date(status.last_sync).getTime();
         if (syncTime >= startTime) {
           break;
         }
