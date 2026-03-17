@@ -313,10 +313,45 @@ async function sync() {
     }
 
     await refresh();
+    cleanupLocalStorage();
   } catch {
     // ignore
   } finally {
     syncing.value = false;
+  }
+}
+
+function cleanupLocalStorage() {
+  if (!data.value?.jobs) return;
+  
+  const currentUrls = new Set(data.value.jobs.map(j => j.url));
+  
+  const appliedToRemove = [...appliedJobs.value].filter(url => !currentUrls.has(url));
+  if (appliedToRemove.length > 0) {
+    const history = JSON.parse(localStorage.getItem("appliedHistory") || "[]");
+    history.push(...appliedToRemove.map(url => ({ url, removedAt: new Date().toISOString() })));
+    localStorage.setItem("appliedHistory", JSON.stringify(history.slice(-100)));
+  }
+  
+  for (const url of appliedToRemove) {
+    appliedJobs.value.delete(url);
+  }
+  if (appliedToRemove.length > 0) {
+    localStorage.setItem("appliedJobs", JSON.stringify([...appliedJobs.value]));
+  }
+  
+  for (const url of [...rejectedJobs.value]) {
+    if (!currentUrls.has(url)) {
+      rejectedJobs.value.delete(url);
+      localStorage.setItem("rejectedJobs", JSON.stringify([...rejectedJobs.value]));
+    }
+  }
+  
+  for (const url of [...viewedJobs.value]) {
+    if (!currentUrls.has(url)) {
+      viewedJobs.value.delete(url);
+      localStorage.setItem("viewedJobs", JSON.stringify([...viewedJobs.value]));
+    }
   }
 }
 </script>
