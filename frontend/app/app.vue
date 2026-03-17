@@ -1,123 +1,119 @@
 <template>
-  <div class="container">
-    <header>
-      <h1>JobBoard Stockholm</h1>
-      <div class="meta">
+  <div class="max-w-4xl mx-auto p-6">
+    <header class="mb-6">
+      <h1 class="text-3xl font-bold mb-2">JobBoard Stockholm</h1>
+      <div class="text-sm text-gray-600">
         <span v-if="data?.last_sync">
           Last sync: {{ new Date(data.last_sync).toLocaleString() }}
         </span>
       </div>
     </header>
 
-    <div class="controls">
-      <div class="search-group">
+    <div class="flex flex-wrap gap-4 mb-4 items-center">
+      <div class="flex gap-2">
         <input
           v-model="search"
           type="text"
           placeholder="Search jobs (React, Vue, TypeScript...)"
+          class="border rounded px-3 py-2"
           @keyup.enter="sync"
         />
-        <button class="btn" :disabled="syncing" @click="sync">
+        <button 
+          class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 disabled:bg-gray-400" 
+          :disabled="syncing" 
+          @click="sync"
+        >
           {{ syncing ? "Searching..." : "Search" }}
         </button>
       </div>
 
-      <select v-model="source" @change="refresh()">
+      <select v-model="source" @change="refresh()" class="border rounded px-3 py-2">
         <option value="">All sources</option>
         <option value="indeed">Indeed</option>
         <option value="linkedin">LinkedIn</option>
       </select>
 
-      <button class="btn-sync" :disabled="syncing" @click="sync">
+      <button 
+        class="bg-gray-600 text-white px-3 py-2 rounded hover:bg-gray-700 disabled:bg-gray-400 disabled:cursor-not-allowed" 
+        :disabled="syncing" 
+        @click="sync"
+      >
         {{ syncing ? "Syncing..." : "Sync Now" }}
       </button>
     </div>
 
-    <div class="shortcuts">
-      <span>Quick Search:</span>
-      <button @click="quickSearch('React developer')">React</button>
-      <button @click="quickSearch('Vue developer')">Vue</button>
-      <button @click="quickSearch('TypeScript developer')">TypeScript</button>
-      <button @click="quickSearch('Frontend developer')">Frontend</button>
-    </div>
-
-    <div class="filters">
-      <span>Filter by:</span>
-      <button
-        @click="statusFilter = 'all'"
-        :class="{ active: statusFilter === 'all' }"
+    <div class="flex flex-wrap gap-2 items-center mb-5">
+      <span class="text-sm text-gray-600">Quick Search:</span>
+      <button 
+        v-for="term in ['React developer', 'Vue developer', 'TypeScript developer', 'Frontend developer']"
+        :key="term"
+        class="bg-gray-200 border-none px-2 py-1 rounded-full text-sm cursor-pointer hover:bg-gray-300"
+        @click="quickSearch(term)"
       >
-        All
-      </button>
-      <button
-        @click="statusFilter = 'new'"
-        :class="{ active: statusFilter === 'new' }"
-      >
-        New
-      </button>
-      <button
-        @click="statusFilter = 'viewed'"
-        :class="{ active: statusFilter === 'viewed' }"
-      >
-        Viewed
-      </button>
-      <button
-        @click="statusFilter = 'applied'"
-        :class="{ active: statusFilter === 'applied' }"
-      >
-        Applied
-      </button>
-      <button
-        @click="statusFilter = 'rejected'"
-        :class="{ active: statusFilter === 'rejected' }"
-      >
-        Rejected
+        {{ term.split(' ')[0] }}
       </button>
     </div>
 
-    <p class="count">
+    <div class="flex flex-wrap gap-3 items-center mb-6">
+      <span class="text-sm text-gray-600">Filter by:</span>
+      <button
+        v-for="f in ['all', 'new', 'viewed', 'applied', 'rejected']"
+        :key="f"
+        class="bg-gray-100 border border-gray-300 px-3 py-2 rounded cursor-pointer hover:bg-gray-200"
+        :class="{ 'bg-blue-600 text-white border-blue-600': statusFilter === f }"
+        @click="statusFilter = f"
+      >
+        {{ f.charAt(0).toUpperCase() + f.slice(1) }}
+      </button>
+    </div>
+
+    <p class="text-sm text-gray-600 mb-4">
       {{ displayedJobs.length }} of {{ data?.count ?? 0 }} jobs shown
     </p>
 
-    <div class="job-list">
+    <div class="space-y-4">
       <div
         v-for="job in displayedJobs"
         :key="job.url"
-        class="job-card"
+        class="border rounded-lg p-4 shadow-sm"
         :class="{
-          viewed: viewedJobs.has(job.url),
-          applied: appliedJobs.has(job.url),
-          rejected: rejectedJobs.has(job.url),
+          'bg-gray-100': viewedJobs.has(job.url),
+          'bg-green-50': appliedJobs.has(job.url),
+          'opacity-60 bg-gray-200': rejectedJobs.has(job.url),
         }"
       >
-        <h3>
+        <h3 class="text-xl font-semibold mb-2">
           <a
             :href="job.url"
             target="_blank"
             rel="noopener"
+            class="text-blue-600 hover:underline"
+            :class="{ 'line-through': rejectedJobs.has(job.url) }"
             @click.prevent="viewJob(job)"
             >{{ job.title }}</a
           >
         </h3>
-        <div class="job-meta">
+        <div class="flex flex-wrap gap-3 text-sm text-gray-600 mb-2">
           <span>{{ job.company }}</span>
           <span>{{ job.location }}</span>
-          <span class="tag">{{ job.source }}</span>
+          <span class="bg-gray-200 px-2 py-0.5 rounded text-xs">{{ job.source }}</span>
           <span v-if="job.date_posted">{{ job.date_posted }}</span>
         </div>
-        <p class="job-desc">{{ job.description }}</p>
-        <div class="job-actions">
+        <p class="text-gray-700 mb-3" :class="{ 'line-through': rejectedJobs.has(job.url) }">
+          {{ job.description }}
+        </p>
+        <div class="flex gap-2 mt-2">
           <a
             :href="job.url"
             target="_blank"
             rel="noopener"
             @click="applyToJob(job)"
-            class="btn-apply"
+            class="bg-green-600 text-white px-3 py-1.5 rounded hover:bg-green-700 text-center no-underline"
           >
             {{ appliedJobs.has(job.url) ? "Applied" : "Apply" }}
           </a>
           <button
-            class="btn-reject"
+            class="bg-red-600 text-white px-3 py-1.5 rounded hover:bg-red-700 disabled:bg-gray-400 disabled:cursor-not-allowed"
             @click="rejectJob(job)"
             :disabled="rejectedJobs.has(job.url)"
           >
@@ -126,7 +122,7 @@
         </div>
       </div>
 
-      <div v-if="displayedJobs.length === 0" class="empty">
+      <div v-if="displayedJobs.length === 0" class="text-center py-8 text-gray-500">
         No jobs found. Try syncing or adjusting your search.
       </div>
     </div>
@@ -155,7 +151,7 @@ interface JobsResponse {
 const search = ref("");
 const source = ref("");
 const syncing = ref(false);
-const statusFilter = ref("all"); // 'all', 'new', 'viewed', 'applied', 'rejected'
+const statusFilter = ref("all");
 
 const viewedJobs = ref<Set<string>>(new Set());
 const rejectedJobs = ref<Set<string>>(new Set());
@@ -177,7 +173,6 @@ const { data, refresh } = await useFetch<JobsResponse>("/api/jobs", {
   query: { q: search, source },
 });
 
-// Watch search changes to trigger local filtering
 watch(search, () => {
   debouncedRefresh();
 });
@@ -207,7 +202,6 @@ const displayedJobs = computed(() => {
       rejectedJobs.value.has(job.url),
     );
   } else {
-    // 'all'
     jobsToDisplay = data.value.jobs;
   }
 
@@ -316,109 +310,3 @@ async function sync() {
   }
 }
 </script>
-
-<style>
-.job-card.viewed {
-  background-color: #f9f9f9;
-}
-.job-card.applied {
-  background-color: #e8f5e9; /* Light green */
-}
-.job-card.rejected {
-  opacity: 0.6;
-  background-color: #f0f0f0;
-}
-.job-card.rejected h3 a,
-.job-card.rejected .job-desc {
-  text-decoration: line-through;
-}
-.job-actions {
-  margin-top: 10px;
-  display: flex;
-  gap: 10px;
-}
-.btn-reject,
-.btn-apply {
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 4px;
-  cursor: pointer;
-  text-decoration: none;
-  display: inline-block;
-  text-align: center;
-}
-.btn-apply {
-  background: #28a745; /* Green */
-}
-.btn-reject {
-  background: #dc3545; /* Red */
-}
-.btn-reject:disabled {
-  background: #ccc;
-  cursor: not-allowed;
-}
-.controls {
-  display: flex;
-  gap: 15px;
-  align-items: center;
-  margin-bottom: 15px;
-  flex-wrap: wrap;
-}
-.search-group {
-  display: flex;
-  gap: 10px;
-}
-.shortcuts {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  margin-bottom: 20px;
-  flex-wrap: wrap;
-}
-.shortcuts button {
-  background: #e0e0e0;
-  border: none;
-  padding: 4px 8px;
-  border-radius: 12px;
-  cursor: pointer;
-  font-size: 0.9em;
-}
-.shortcuts button:hover {
-  background: #d0d0d0;
-}
-.filters {
-  display: flex;
-  gap: 15px;
-  align-items: center;
-  margin-bottom: 25px;
-  flex-wrap: wrap;
-}
-.filters button {
-  background: #f0f0f0;
-  border: 1px solid #ccc;
-  padding: 5px 10px;
-  border-radius: 4px;
-  cursor: pointer;
-}
-.filters button.active {
-  background: #007bff;
-  color: white;
-  border-color: #007bff;
-}
-.btn-sync {
-  background-color: #6c757d;
-  color: white;
-  border: none;
-  padding: 6px 12px;
-  border-radius: 4px;
-  cursor: pointer;
-}
-.btn-sync:hover {
-  background-color: #5a6268;
-}
-.btn-sync:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
-}
-</style>
