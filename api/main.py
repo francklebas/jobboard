@@ -63,5 +63,12 @@ def list_jobs(q: str = "", source: str = ""):
 
 @app.post("/jobs/sync")
 def sync_jobs(background_tasks: BackgroundTasks, q: str = ""):
+    import time
+    start_time = time.time()
     background_tasks.add_task(run_scrape, search_query=q if q else None)
-    return {"status": "sync started", "query": q}
+    return {"status": "sync started", "query": q, "started_at": start_time}
+
+
+@app.get("/jobs/sync/status")
+def get_sync_status():
+    return {"last_sync": get_last_sync()}

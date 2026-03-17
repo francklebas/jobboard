@@ -287,22 +287,31 @@ function debouncedRefresh() {
 async function sync() {
   syncing.value = true;
   try {
-    // Send the current search term to the backend for scraping
-    await $fetch("/api/sync", {
+    const syncResponse = await $fetch<{ started_at: number }>("/api/sync", {
       method: "POST",
       query: { q: search.value },
     });
 
-    // Wait a bit for scrape to start/finish, then refresh
-    // Note: In a real app, we might want to poll for status or use websockets
-    setTimeout(async () => {
-      try {
-        await refresh();
-      } finally {
-        syncing.value = false;
+    const startTime = syncResponse.started_at;
+    const pollInterval = 1000;
+    const timeout = 60000;
+
+    while (Date.now() / 1000 - startTime < timeout) {
+      await new Promise(r => setTimeout(r, pollInterval));
+      
+      const status = await $fetch<{ last_sync: string | null }>("/api/sync/status");
+      if (status.last_sync) {
+        const syncTime = new Date(status.last_sync).getTime() / 1000;
+        if (syncTime >= startTime) {
+          break;
+        }
       }
-    }, 5000); // Increased timeout slightly as scraping might take time
+    }
+
+    await refresh();
   } catch {
+    // ignore
+  } finally {
     syncing.value = false;
   }
 }
