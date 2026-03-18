@@ -1,4 +1,5 @@
 import logging
+import math
 from datetime import datetime, timezone
 from jobspy import scrape_jobs
 from database import store_jobs, set_last_sync
@@ -18,6 +19,26 @@ STACK_KEYWORDS = {"react", "vue", "typescript", "nuxt", "next", "frontend", "fro
 def _matches_stack(title: str, description: str) -> bool:
     text = f"{title} {description}".lower()
     return any(kw in text for kw in STACK_KEYWORDS)
+
+
+def _normalize_text(value: object) -> str:
+    if value is None:
+        return ""
+    if isinstance(value, float) and math.isnan(value):
+        return ""
+
+    text = str(value).strip()
+    if text.lower() in {"nan", "none", "null"}:
+        return ""
+    return text
+
+
+def _first_text(row, *keys: str) -> str:
+    for key in keys:
+        text = _normalize_text(row.get(key, ""))
+        if text:
+            return text
+    return ""
 
 
 def run_scrape(search_query: str | None = None) -> int:
@@ -42,26 +63,29 @@ def run_scrape(search_query: str | None = None) -> int:
                 location="Stockholm, Sweden",
                 results_wanted=30,
                 country_indeed="Sweden",
+                linkedin_fetch_description=True,
             )
             for _, row in df.iterrows():
-                url = str(row.get("job_url", ""))
+                url = _first_text(row, "job_url", "job_url_direct")
+                if not url:
+                    continue
                 if url in seen_urls:
                     continue
                 seen_urls.add(url)
 
-                title = str(row.get("title", ""))
-                description = str(row.get("description", ""))
+                title = _first_text(row, "title")
+                description = _first_text(row, "description", "company_description")
 
                 if should_filter and not _matches_stack(title, description):
                     continue
 
                 all_jobs.append({
                     "title": title,
-                    "company": str(row.get("company_name", "")),
-                    "location": str(row.get("location", "")),
+                    "company": _first_text(row, "company_name", "company"),
+                    "location": _first_text(row, "location"),
                     "url": url,
-                    "source": str(row.get("site", "")),
-                    "date_posted": str(row.get("date_posted", "")),
+                    "source": _first_text(row, "site"),
+                    "date_posted": _first_text(row, "date_posted"),
                     "description": description[:2000],
                 })
         except Exception:

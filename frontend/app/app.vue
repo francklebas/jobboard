@@ -110,17 +110,16 @@
           {{ job.description }}
         </p>
         <div class="flex gap-2 mt-2">
-          <a
-            :href="job.url"
-            target="_blank"
-            rel="noopener"
-            @click="applyToJob(job)"
-            class="px-3 py-1.5 rounded text-center no-underline text-white"
+          <button
+            type="button"
+            @click.stop.prevent="applyToJob(job)"
+            class="px-3 py-1.5 rounded text-center no-underline text-white disabled:cursor-not-allowed disabled:opacity-60"
             :class="{ '!bg-green-700': appliedJobs.has(job.url) }"
             style="background: #22c55e"
+            :disabled="appliedJobs.has(job.url)"
           >
             {{ appliedJobs.has(job.url) ? "Applied" : "Apply" }}
-          </a>
+          </button>
           <button
             class="px-3 py-1.5 rounded text-white disabled:bg-gray-400 disabled:cursor-not-allowed"
             style="background: #ef4444"
