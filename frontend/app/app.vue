@@ -366,7 +366,26 @@ function cleanupLocalStorage() {
 
 function renderDescription(description: string) {
   if (!description) return "";
-  return markdown.render(description);
+  return markdown.render(normalizeMarkdown(description));
+}
+
+function normalizeMarkdown(input: string) {
+  let value = input.trimEnd();
+
+  value = value.replace(/\\([*_`])/g, "$1");
+
+  for (const token of ["**", "__", "`"]) {
+    const count = value.split(token).length - 1;
+    if (count % 2 === 0) continue;
+
+    if (value.endsWith(token)) {
+      value = value.slice(0, -token.length);
+    } else {
+      value += token;
+    }
+  }
+
+  return value.replace(/(\*{1,2}|_{1,2}|`+)\s*$/, "");
 }
 </script>
 
