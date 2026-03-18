@@ -27,6 +27,16 @@ class LastSync(Base):  # type: ignore[valid-type]
 engine = create_engine(DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
+
+def _clean_text(value: object) -> str:
+    if value is None:
+        return ""
+
+    text = str(value).strip()
+    if text.lower() in {"nan", "none", "null", "<na>"}:
+        return ""
+    return text
+
 def init_db():
     try:
         Base.metadata.create_all(bind=engine)
@@ -68,13 +78,13 @@ def get_all_jobs() -> list[dict]:
     try:
         jobs = db.query(Job).all()
         return [{
-            "title": j.title,
-            "company": j.company,
-            "location": j.location,
-            "url": j.url,
-            "source": j.source,
-            "date_posted": j.date_posted,
-            "description": j.description,
+            "title": _clean_text(j.title),
+            "company": _clean_text(j.company),
+            "location": _clean_text(j.location),
+            "url": _clean_text(j.url),
+            "source": _clean_text(j.source),
+            "date_posted": _clean_text(j.date_posted),
+            "description": _clean_text(j.description),
         } for j in jobs]
     finally:
         db.close()

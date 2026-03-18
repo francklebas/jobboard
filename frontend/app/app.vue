@@ -143,7 +143,8 @@
 
 <script setup lang="ts">
 import { ref, onMounted, computed, watch } from "vue";
-import MarkdownIt from "markdown-it";
+import DOMPurify from "isomorphic-dompurify";
+import { marked } from "marked";
 
 interface Job {
   title: string;
@@ -161,10 +162,9 @@ interface JobsResponse {
   jobs: Job[];
 }
 
-const markdown = new MarkdownIt({
-  html: false,
-  linkify: true,
+marked.setOptions({
   breaks: true,
+  gfm: true,
 });
 
 const search = ref("");
@@ -366,11 +366,17 @@ function cleanupLocalStorage() {
 
 function renderDescription(description: string) {
   if (!description) return "";
-  return markdown.render(normalizeMarkdown(description));
+  const normalized = normalizeMarkdown(description);
+  if (!normalized) return "";
+  const html = marked.parse(normalized);
+  return DOMPurify.sanitize(typeof html === "string" ? html : "");
 }
 
 function normalizeMarkdown(input: string) {
-  let value = input.trimEnd();
+  let value = input.trim();
+  if (["nan", "none", "null", "<na>"].includes(value.toLowerCase())) {
+    return "";
+  }
 
   value = value.replace(/\\([*_`])/g, "$1");
 
