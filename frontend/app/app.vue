@@ -106,9 +106,12 @@
           <span class="px-2 py-0.5 rounded text-xs" style="background: var(--tag-bg); color: var(--tag-text)">{{ job.source }}</span>
           <span v-if="job.date_posted">{{ job.date_posted }}</span>
         </div>
-        <p class="mb-3" style="color: var(--text-dim)" :class="{ 'line-through': rejectedJobs.has(job.url) }">
-          {{ job.description }}
-        </p>
+        <div
+          class="mb-3 description-content"
+          style="color: var(--text-dim)"
+          :class="{ 'line-through': rejectedJobs.has(job.url) }"
+          v-html="renderDescription(job.description)"
+        />
         <div class="flex gap-2 mt-2">
           <button
             type="button"
@@ -140,6 +143,7 @@
 
 <script setup lang="ts">
 import { ref, onMounted, computed, watch } from "vue";
+import MarkdownIt from "markdown-it";
 
 interface Job {
   title: string;
@@ -156,6 +160,12 @@ interface JobsResponse {
   last_sync: string | null;
   jobs: Job[];
 }
+
+const markdown = new MarkdownIt({
+  html: false,
+  linkify: true,
+  breaks: true,
+});
 
 const search = ref("");
 const source = ref("");
@@ -353,4 +363,39 @@ function cleanupLocalStorage() {
     }
   }
 }
+
+function renderDescription(description: string) {
+  if (!description) return "";
+  return markdown.render(description);
+}
 </script>
+
+<style scoped>
+.description-content :deep(p) {
+  margin: 0 0 0.5rem;
+}
+
+.description-content :deep(p:last-child) {
+  margin-bottom: 0;
+}
+
+.description-content :deep(ul) {
+  list-style: disc;
+  margin: 0.5rem 0;
+  padding-left: 1.25rem;
+}
+
+.description-content :deep(li) {
+  margin: 0.2rem 0;
+}
+
+.description-content :deep(strong) {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.description-content :deep(a) {
+  color: var(--accent);
+  text-decoration: underline;
+}
+</style>
