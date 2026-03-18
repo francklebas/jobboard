@@ -1,3 +1,5 @@
+import tailwindcss from "@tailwindcss/vite";
+
 export default defineNuxtConfig({
   compatibilityDate: "2025-01-01",
   ssr: true,
@@ -17,6 +19,6 @@ export default defineNuxtConfig({
   },
   css: ["~/assets/main.css"],
   vite: {
-    plugins: ["@tailwindcss/vite"],
+    plugins: [tailwindcss()],
   },
 });
