@@ -31,4 +31,9 @@ Thumbs.db
 # Logs
 *.log
 
+# Local WIP artifacts
+tmp_merge.json
+vuejobs_all.json
+vuejobs_scrape.sh
+
 # Lock files (generated per environment)
