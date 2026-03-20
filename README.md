@@ -6,7 +6,7 @@ Aggregates frontend job listings in Stockholm, filtered by stack (React, Vue, Ty
 
 - **FastAPI** — REST API + job scraping via [python-jobspy](https://github.com/Bunsly/JobSpy)
 - **APScheduler** — Automated scraping on a configurable interval
-- **PostgreSQL** — Persistent job storage
+- **In-memory TTL cache** — Temporary job storage (auto-expire)
 - **Nuxt** — SSR frontend with full-text search and source filtering
 
 ## Quick start
@@ -32,14 +32,16 @@ See `.env.example` for available environment variables.
 
 | Variable                 | Default               | Description                    |
 |--------------------------|-----------------------|--------------------------------|
-| `POSTGRES_DB`            | `jobboard_db`         | PostgreSQL database name (Docker) |
-| `POSTGRES_USER`          | `user`                | PostgreSQL user (Docker)       |
-| `POSTGRES_PASSWORD`      | `password`            | PostgreSQL password (Docker)   |
-| `DATABASE_URL`           | `postgresql+psycopg2://user:password@postgres:5432/jobboard_db` | PostgreSQL connection string |
 | `SCRAPE_INTERVAL_HOURS`  | `6`                   | Hours between automatic scrapes|
+| `CACHE_TTL_SECONDS`      | `21600`               | In-memory cache TTL (seconds)  |
 | `NUXT_PUBLIC_API_URL`    | `http://localhost:8000` | API URL (client-side)        |
 | `NITRO_API_URL`          | `http://api:8000`     | API URL (server-side proxy)    |
 
 ## Sources
 
-Jobs are scraped from Indeed and LinkedIn, filtered by keywords: `react`, `vue`, `typescript`, `nuxt`, `next`, `frontend`, `front-end`.
+Jobs are scraped from Indeed only, filtered by keywords: `react`, `vue`, `typescript`, `nuxt`, `next`, `frontend`, `front-end`.
+
+## Legal notice
+
+Job listings are aggregated from third-party sources (Indeed, etc.) and cached temporarily.
+All job postings remain property of their respective sources. This tool is not affiliated with any job board.

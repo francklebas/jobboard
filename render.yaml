@@ -4,10 +4,8 @@ services:
     runtime: docker
     dockerfilePath: ./api/Dockerfile
     envVars:
-      - key: DATABASE_URL
-        fromDatabase:
-          name: jobboard-db
-          property: connectionString
+      - key: CACHE_TTL_SECONDS
+        value: "21600"
 
   - type: web
     name: jobboard-frontend
@@ -26,13 +24,5 @@ services:
     schedule: "0 */6 * * *"
     dockerCommand: python scripts/cron_scrape.py
     envVars:
-      - key: DATABASE_URL
-        fromDatabase:
-          name: jobboard-db
-          property: connectionString
-
-databases:
-  - name: jobboard-db
-    plan: free
-    databaseName: jobboard_db
-    user: jobboard_user
+      - key: CACHE_TTL_SECONDS
+        value: "21600"

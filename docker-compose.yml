@@ -1,29 +1,10 @@
 services:
-  postgres:
-    image: postgres:16
-    ports:
-      - "5432:5432"
-    environment:
-      POSTGRES_DB: ${POSTGRES_DB:-jobboard_db}
-      POSTGRES_USER: ${POSTGRES_USER:-user}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-password}
-    volumes:
-      - postgres-data:/var/lib/postgresql/data
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-user} -d ${POSTGRES_DB:-jobboard_db}"]
-      interval: 5s
-      timeout: 3s
-      retries: 5
-
   api:
     build: ./api
     ports:
       - "8000:8000"
     environment:
-      - DATABASE_URL=${DATABASE_URL:-postgresql+psycopg2://user:password@postgres:5432/jobboard_db}
-    depends_on:
-      postgres:
-        condition: service_healthy
+      - CACHE_TTL_SECONDS=${CACHE_TTL_SECONDS:-21600}
     develop:
       watch:
         - action: restart
@@ -56,6 +37,5 @@ services:
       - frontend
 
 volumes:
-  postgres-data:
   caddy-data:
   caddy-config:

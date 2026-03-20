@@ -29,11 +29,12 @@
         </button>
       </div>
 
-      <select v-model="source" @change="refresh()" class="border rounded px-3 py-2" style="background: var(--surface); border-color: var(--border); color: var(--text)">
-        <option value="">All sources</option>
-        <option value="indeed">Indeed</option>
-        <option value="linkedin">LinkedIn</option>
-      </select>
+      <span
+        class="border rounded px-3 py-2 text-sm"
+        style="background: var(--surface); border-color: var(--border); color: var(--text)"
+      >
+        Source: Indeed
+      </span>
 
       <button 
         class="px-3 py-2 rounded text-white disabled:bg-gray-400 disabled:cursor-not-allowed" 
@@ -75,6 +76,15 @@
     <p class="text-sm mb-4" style="color: var(--text-dim)">
       {{ displayedJobs.length }} of {{ data?.count ?? 0 }} jobs shown
     </p>
+
+    <section class="mb-5 border rounded-lg p-4 text-sm" style="background: var(--surface); border-color: var(--border); color: var(--text-dim)">
+      <h2 class="font-semibold mb-2" style="color: var(--text)">Legal notice</h2>
+      <p>
+        Job listings are aggregated from third-party sources (Indeed, etc.) and cached temporarily.
+        All job postings remain property of their respective sources. This tool is not affiliated with
+        any job board.
+      </p>
+    </section>
 
     <div class="space-y-4">
       <div
@@ -168,7 +178,7 @@ marked.setOptions({
 });
 
 const search = ref("");
-const source = ref("");
+const source = ref("indeed");
 const syncing = ref(false);
 const statusFilter = ref("all");
 

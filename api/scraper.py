@@ -41,8 +41,19 @@ def _first_text(row, *keys: str) -> str:
     return ""
 
 
+def _truncate_description(text: str, max_chars: int = 200) -> str:
+    value = _normalize_text(text)
+    if len(value) <= max_chars:
+        return value
+
+    shortened = value[:max_chars].rstrip()
+    if " " in shortened:
+        shortened = shortened.rsplit(" ", 1)[0]
+    return f"{shortened}..."
+
+
 def run_scrape(search_query: str | None = None) -> int:
-    """Scrape jobs from multiple sources.
+    """Scrape jobs from Indeed.
     
     If search_query is provided, scrapes only for that query and skips stack filtering.
     Otherwise, scrapes for default SEARCH_QUERIES and filters by stack.
@@ -58,12 +69,11 @@ def run_scrape(search_query: str | None = None) -> int:
         try:
             logger.info(f"Scraping for query: {query}")
             df = scrape_jobs(
-                site_name=["indeed", "linkedin"],
+                site_name=["indeed"],
                 search_term=query,
                 location="Stockholm, Sweden",
                 results_wanted=30,
                 country_indeed="Sweden",
-                linkedin_fetch_description=True,
             )
             for _, row in df.iterrows():
                 url = _first_text(row, "job_url", "job_url_direct")
@@ -86,7 +96,7 @@ def run_scrape(search_query: str | None = None) -> int:
                     "url": url,
                     "source": _first_text(row, "site"),
                     "date_posted": _first_text(row, "date_posted"),
-                    "description": description[:2000],
+                    "description": _truncate_description(description),
                 })
         except Exception:
             logger.exception("Scrape failed for query: %s", query)

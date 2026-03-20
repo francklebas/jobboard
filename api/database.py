@@ -1,31 +1,14 @@
 import os
-from datetime import datetime
-from sqlalchemy import create_engine, Column, Integer, String, Text, DateTime
-from sqlalchemy.orm import sessionmaker, declarative_base
-from sqlalchemy.exc import OperationalError
+from datetime import datetime, timedelta, timezone
+from threading import Lock
 
-DATABASE_URL = os.getenv("DATABASE_URL", "postgresql+psycopg2://user:password@postgres:5432/jobboard_db")
 
-Base = declarative_base()
+CACHE_TTL_SECONDS = int(os.getenv("CACHE_TTL_SECONDS", "21600"))
 
-class Job(Base):  # type: ignore[valid-type]
-    __tablename__ = "jobs"
-    id = Column(Integer, primary_key=True, index=True)
-    title = Column(String(255), index=True)
-    company = Column(String(255))
-    location = Column(String(255))
-    url = Column(String(255), unique=True, index=True)
-    source = Column(String(255))
-    date_posted = Column(String(255)) # Storing as string for now, can be converted to DateTime if needed
-    description = Column(Text)
-
-class LastSync(Base):  # type: ignore[valid-type]
-    __tablename__ = "last_sync"
-    id = Column(Integer, primary_key=True)
-    timestamp = Column(DateTime, default=datetime.utcnow)
-
-engine = create_engine(DATABASE_URL)
-SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+_cache_lock = Lock()
+_cached_jobs: list[dict] = []
+_cached_until: datetime | None = None
+_last_sync: str | None = None
 
 
 def _clean_text(value: object) -> str:
@@ -37,80 +20,68 @@ def _clean_text(value: object) -> str:
         return ""
     return text
 
+
+def _is_cache_expired(now: datetime) -> bool:
+    return _cached_until is not None and now >= _cached_until
+
+
+def _clear_cache() -> None:
+    global _cached_jobs, _cached_until, _last_sync
+    _cached_jobs = []
+    _cached_until = None
+    _last_sync = None
+
+
 def init_db():
-    try:
-        Base.metadata.create_all(bind=engine)
-    except OperationalError as e:
-        print(f"Database connection failed: {e}")
-        print("Please ensure the PostgreSQL service is running and accessible.")
-        raise
+    return None
+
 
 def get_db():
-    db = SessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()
+    return None
+
 
 def store_jobs(jobs_data: list[dict]) -> int:
-    db = SessionLocal()
-    try:
-        # Clear existing jobs
-        db.query(Job).delete()
-        db.commit()
+    global _cached_jobs, _cached_until
+    now = datetime.now(timezone.utc)
+    with _cache_lock:
+        _cached_jobs = [
+            {
+                "title": _clean_text(job_data.get("title", "")),
+                "company": _clean_text(job_data.get("company", "")),
+                "location": _clean_text(job_data.get("location", "")),
+                "url": _clean_text(job_data.get("url", "")),
+                "source": _clean_text(job_data.get("source", "")),
+                "date_posted": _clean_text(job_data.get("date_posted", "")),
+                "description": _clean_text(job_data.get("description", "")),
+            }
+            for job_data in jobs_data
+        ]
+        _cached_until = now + timedelta(seconds=CACHE_TTL_SECONDS)
+        return len(_cached_jobs)
 
-        # Add new jobs
-        new_jobs = []
-        for job_data in jobs_data:
-            job = Job(**job_data)
-            db.add(job)
-            new_jobs.append(job)
-        db.commit()
-        return len(new_jobs)
-    except Exception as e:
-        db.rollback()
-        raise e
-    finally:
-        db.close()
 
 def get_all_jobs() -> list[dict]:
-    db = SessionLocal()
-    try:
-        jobs = db.query(Job).all()
-        return [{
-            "title": _clean_text(j.title),
-            "company": _clean_text(j.company),
-            "location": _clean_text(j.location),
-            "url": _clean_text(j.url),
-            "source": _clean_text(j.source),
-            "date_posted": _clean_text(j.date_posted),
-            "description": _clean_text(j.description),
-        } for j in jobs]
-    finally:
-        db.close()
+    now = datetime.now(timezone.utc)
+    with _cache_lock:
+        if _is_cache_expired(now):
+            _clear_cache()
+            return []
+        return list(_cached_jobs)
+
 
 def get_last_sync() -> str | None:
-    db = SessionLocal()
-    try:
-        last_sync_entry = db.query(LastSync).order_by(LastSync.timestamp.desc()).first()
-        if last_sync_entry:
-            return last_sync_entry.timestamp.isoformat()
-        return None
-    finally:
-        db.close()
+    now = datetime.now(timezone.utc)
+    with _cache_lock:
+        if _is_cache_expired(now):
+            _clear_cache()
+            return None
+        return _last_sync
+
 
 def set_last_sync(ts: str):
-    db = SessionLocal()
-    try:
-        # Clear previous last sync entries (optional, or keep a history)
-        db.query(LastSync).delete()
-        db.commit()
-
-        new_sync = LastSync(timestamp=datetime.fromisoformat(ts))
-        db.add(new_sync)
-        db.commit()
-    except Exception as e:
-        db.rollback()
-        raise e
-    finally:
-        db.close()
+    global _last_sync, _cached_until
+    now = datetime.now(timezone.utc)
+    with _cache_lock:
+        _last_sync = ts
+        if _cached_jobs:
+            _cached_until = now + timedelta(seconds=CACHE_TTL_SECONDS)
