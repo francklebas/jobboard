@@ -35,12 +35,23 @@ echo "=== [5/6] Démarrage docker compose ==="
 PUBLIC_IP=$(curl -s http://169.254.169.254/latest/meta-data/public-ipv4)
 
 cd /home/ubuntu/jobboard
-NUXT_PUBLIC_API_URL="http://${PUBLIC_IP}:8000" \
-NITRO_API_URL="http://api:8000" \
+cat > /home/ubuntu/jobboard/.env <<EOF
+POSTGRES_DB=${postgres_db}
+POSTGRES_USER=${postgres_user}
+POSTGRES_PASSWORD=${postgres_password}
+DATABASE_URL=postgresql+psycopg2://${postgres_user}:${postgres_password}@postgres:5432/${postgres_db}
+SCRAPE_INTERVAL_HOURS=${scrape_interval}
+NUXT_PUBLIC_API_URL=http://$${PUBLIC_IP}:8000
+NITRO_API_URL=http://api:8000
+EOF
+
+chown ubuntu:ubuntu /home/ubuntu/jobboard/.env
+chmod 600 /home/ubuntu/jobboard/.env
+
 docker compose up -d --build
 
 echo "=== [6/6] Crontab scrape toutes les 6h ==="
-(crontab -u ubuntu -l 2>/dev/null; echo "0 */6 * * * curl -s -X POST http://localhost:8000/jobs/sync") | crontab -u ubuntu -
+(crontab -u ubuntu -l 2>/dev/null || true; echo "0 */${scrape_interval} * * * curl -s -X POST http://localhost:8000/jobs/sync") | crontab -u ubuntu -
 
 touch "$LOCK_FILE"
-echo "=== Bootstrap terminé — IP publique : ${PUBLIC_IP} ==="
+echo "=== Bootstrap termine - IP publique : $${PUBLIC_IP} ==="

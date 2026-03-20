@@ -57,23 +57,7 @@ resource "aws_security_group" "jobboard" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  ingress {
-    description = "API"
-    from_port   = 8000
-    to_port     = 8000
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  ingress {
-    description = "Frontend"
-    from_port   = 3000
-    to_port     = 3000
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
+    cidr_blocks = var.ssh_allowed_cidrs
   }
 
   egress {
@@ -111,7 +95,12 @@ resource "aws_instance" "jobboard" {
     volume_type = "gp3"
   }
 
-  user_data = file("${path.module}/user_data.sh")
+  user_data = templatefile("${path.module}/user_data.sh", {
+    postgres_db       = var.postgres_db
+    postgres_user     = var.postgres_user
+    postgres_password = var.postgres_password
+    scrape_interval   = var.scrape_interval_hours
+  })
 
   tags = {
     Name = "jobboard"
