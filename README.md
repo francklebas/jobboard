@@ -1,6 +1,6 @@
 # JobBoard Stockholm
 
-Aggregates frontend job listings in Stockholm, filtered by stack (React, Vue, TypeScript).
+Aggregates frontend job listings in Stockholm, filtered by stack (Vue, Nuxt, TypeScript).
 
 ## Stack
 
