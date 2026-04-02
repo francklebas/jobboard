@@ -39,7 +39,7 @@ See `.env.example` for available environment variables.
 
 ## Sources
 
-Jobs are scraped from Indeed only, filtered by keywords: `react`, `vue`, `typescript`, `nuxt`, `next`, `frontend`, `front-end`.
+Jobs are scraped from Indeed only, filtered by keywords: `vue`, `typescript`, `nuxt`, `nuxt`, `frontend`, `front-end`.
 
 ## Legal notice
 
